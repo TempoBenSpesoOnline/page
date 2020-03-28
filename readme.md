@@ -16,7 +16,6 @@ Nella key `shared` ci sono i testi per i titoli, le preview e la lista delle cos
 |`ogimageAlt`|Il testo che c'é in preview quando l'immagine non carica o per _screen-reader_|Testo|
 |`htmlTitles`|Nella tab del browser, la parte che viene prima dell'`htmlTitle`. (se vuoi lo posso spostare a dopo, np)|Array[Testo]|
 |`list`|Una lista con tutte le cose da fare, spiegata dopo.|Array[Modulo]|
----
 ### `/`
 Dopo `shared`, c'é `/`. `/` indica le cose presenti _solo_ nella home (tipi: Testo).
 |_Key_|Contenuto|
@@ -24,10 +23,8 @@ Dopo `shared`, c'é `/`. `/` indica le cose presenti _solo_ nella home (tipi: Te
 |`title`|Il titolo in cima, io non lo cambierei tanto perché il sito alla fine é quello...|
 |`motto`|Un sottotitolo che fa parte del nome|
 |`description`|la descrizione di cos'é il sito|
----
 ### Key `#`
 Ultime, ci sono le key che iniziano con `#`. Queste rappresentano il titolo della categoria, ad esempio `#museo` é il titolo della categoria dei musei. (tipo: Testo)
----
 ### `list`: cosa c'é dentro?
 List é un Array[Modulo], quindi una lista con dentro tanti gruppi di valori (in questo caso punti dell'elenco).
 Per ogni oggetto:
@@ -39,14 +36,10 @@ Per ogni oggetto:
 |`href`|Link del sito, non cambiarlo.|Testo|
 |`info`|(Opzionale) Eventuali informazioni su come usufruire del punto|Testo\*|
 |`warn`|(Opzionale) Eventuali informazioni **necessarie** per usufruire del punto.|Testo\*|
-
 \*: potrebbe contenere codice HTML, in qual caso **non** modificare le cose contenute tra &lt; e &gt; (oppure chiamami e basta)
----
 ## Aggiungere
 Puoi ovviamente aggiungere cose, basta aggiungere un elemento alla lista (aggiungi una virgola dopo l'ultimo, peró.)
----
 ## Quando hai modificato qualcosa, dimmelo che devo ricompilare.
----
 ## Trivia
 - Non ho la piú pallida idea di perché le key sono in inglese
 - Il tipo 'testo' si chiama in veritá Stringa
