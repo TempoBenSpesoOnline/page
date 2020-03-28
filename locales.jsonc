@@ -1,6 +1,6 @@
 {
 	"shared": { // On all pages.
-		"htmlTitle": "${page|'home'} @ TempoBenSpeso.online", // The title which appears in the browser tab
+		"htmlTitle": /*pagename | 'home'*/" @ TempoBenSpeso.online", // The title which appears in the browser tab
 		"ogTitle": "Tempo Ben Speso Online", // The title which appears in the preview in (eg) WhatsApp or Facebook.
 		"ogDescription": "Una lista aggiornata (circa) di cose interessanti e gratuite da fare in questo periodo.", // The description which appears on (eg) WhatsApp or Facebook.
 		"ogimageAlt": "Logo Tempo Ben Speso Online", // Text which appears when the image can't be loaded on a preview
