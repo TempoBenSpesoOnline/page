@@ -1,0 +1,196 @@
+{
+	"shared": { // On all pages.
+		"htmlTitle": "${page|'home'} @ TempoBenSpeso.online", // The title which appears in the browser tab
+		"ogTitle": "Tempo Ben Speso Online", // The title which appears in the preview in (eg) WhatsApp or Facebook.
+		"ogDescription": "Una lista aggiornata (circa) di cose interessanti e gratuite da fare in questo periodo.", // The description which appears on (eg) WhatsApp or Facebook.
+		"ogimageAlt": "Logo Tempo Ben Speso Online", // Text which appears when the image can't be loaded on a preview
+		"list": [
+			// Musei
+			{
+				"cat": [
+					"museo",
+					"film"
+				],
+				"ref": "skyarte",
+				"text": "Sky Arte: tutti i programmi firmati Sky Arte gratuitamente."
+			},
+			// end Musei
+			// Divertimenti
+			{
+				"cat": [
+					"divertimento"
+				],
+				"ref": "ludodi",
+				"text": "Ludodí: giochi di carte personalizzabili gratis."
+			},
+			// end Divertimenti
+			// Riviste
+			{
+				"cat": [
+					"rivista"
+				],
+				"ref": "condenast",
+				"text": "Condé Nast: Vanity Fair, Wired, Vogue, GQ, La Cucina Italiana, AD, Traveller gratuiti"
+			},
+			{
+				"cat": [
+					"rivista",
+					"green"
+				],
+				"ref": "nuovaeco",
+				"text": "La Nuova Ecologia"
+			},
+			{
+				"cat": [
+					"rivista"
+				],
+				"ref": "elettroin",
+				"text": "Elettronica In"
+			},
+			// end Riviste
+			// Libri
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "narratore",
+				"text": "Il Narratore: audiolibri gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "bertoni",
+				"text": "Bertoni Editore: e-book gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "bookabook",
+				"text": "BookABook: e-book gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "bookrep",
+				"text": "BookRepublic.it: e-book gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "csirio",
+				"text": "CasaSirio: versione premium con accesso ad e-book gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "cartabianca",
+				"text": "CartaBianca: e-book gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "gallucci",
+				"text": "Gallucci Editore: e-book gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "saggiatore",
+				"text": "Il Saggiatore: ogni due giorni, un e-book gratuito a scelta."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "caravaggio",
+				"text": "Caravaggio Editore: e-book gratuiti a rotazione."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "skylab",
+				"text": "SkyLab: grandi calssici in e-book gratuiti."
+			},
+			{
+				"cat": [
+					"libro"
+				],
+				"ref": "neropress",
+				"text": "Neropress: e-book gratuiti."
+			},
+			// end Libri
+			// Film
+			{
+				"cat": [
+					"film"
+				],
+				"ref": "soleluna",
+				"text": "Sole Luna Doc: documentari in streaming."
+			},
+			{
+				"cat": [
+					"film",
+					"audio"
+				],
+				"ref": "fbk",
+				"text": "FBK: Video, podcast e risorse online gratuite."
+			},
+			{
+				"cat": [
+					"film"
+				],
+				"ref": "marechiaro",
+				"text": "MareChiaro: Film di marechiarofilm in streaming."
+			},
+			// also Sky Arte
+			{
+				"cat": [
+					"film"
+				],
+				"ref": "infinity",
+				"text": "Infinity: Due mesi di abbonamento ad Infinity gratuito."
+			},
+			// end Film
+			// Audio
+			{
+				"cat": [
+					"audio"
+				],
+				"ref": "farfallina",
+				"text": "FarfallinaEdizioni: canzoni, spartiti, testi e musice dell'etichetta Farfallina gratuiti."
+			},
+			// also FBK
+			// end Audio
+			// Green
+			{
+				"cat": [
+					"green"
+				],
+				"ref": "legambiente",
+				"text": "#iorestoacasa LegaAmbiente: Contenuti con al centro l'ambiente e la sostenibilitá"
+			}
+			// also La Nuova Ecologia
+			// end Green
+		]
+	},
+	"/": { // The home page.
+		"title": "Tempo Ben Speso Online", // The title
+		"motto": "Dove il divertimeto é di casa. Letteralmente.", // The motto
+		"description": "Una lista aggiornata (circa) di cose interessanti e gratuite da fare in questo periodo." // The description under the title.
+	},
+	"#museo": "Musei e Arte",
+	"#divertimento": "Divertimento e bambini",
+	"#rivista": "Riviste, periodici e giornali.",
+	"#libro": "Libri",
+	"#film": "Video, film, streaming e documentari",
+	"#audio": "Audio, musiche, dischi e spartiti.",
+	"#green": "Futuro, sostenibilitá e green"
+}
