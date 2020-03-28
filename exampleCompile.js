@@ -1,4 +1,4 @@
-const Input = require("./locales.json"), fs = require("fs");
+const Input = require("./example.json"), fs = require("fs");
 let Output = "";
 
 const utils = {
