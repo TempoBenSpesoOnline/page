@@ -37,7 +37,7 @@ const utils = {
     elements.forEach((el) => {_tempEl += el + "\n"})
     elements = _tempEl;
     return `  <body>
-    <h1>${Input["#" + name]}</h1>
+    <h1 class="display-1">${Input["#" + name]}</h1>
     <ul>
       ${elements}
     </ul>
