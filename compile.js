@@ -91,7 +91,7 @@ Output2 += `  <body>
     <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
       <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
-      <label>Categorie: <select name="categoria" multiple required>
+      <label>Categorie: <select name="categoria" multiple required size="1">
         <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
         <option value="museo">${Input["#museo"]}</option>
         <option value="divertimento">${Input["#divertimento"]}</option>
@@ -101,7 +101,7 @@ Output2 += `  <body>
         <option value="audio">${Input["#audio"]}</option>
         <option value="green">${Input["#green"]}</option>
       </select></label><br>
-      <label>Sottocategorie: <select name="scat" multiple>
+      <label>Sottocategorie: <select name="scat" multiple size="1">
         <option value="" selected>Non lo so</option>
         <option disabled>-- ${Input["#museo"]} --</option>
         <option value="musonline">Museo online</option>

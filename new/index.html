@@ -19,7 +19,7 @@
     <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
       <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
-      <label>Categorie: <select name="categoria" multiple required>
+      <label>Categorie: <select name="categoria" multiple required size="1">
         <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
         <option value="museo">Musei e Arte</option>
         <option value="divertimento">Divertimento e bambini</option>
@@ -29,7 +29,7 @@
         <option value="audio">Audio, musiche, dischi e spartiti.</option>
         <option value="green">Futuro, sostenibilitá e green</option>
       </select></label><br>
-      <label>Sottocategorie: <select name="scat" multiple>
+      <label>Sottocategorie: <select name="scat" multiple size="1">
         <option value="" selected>Non lo so</option>
         <option disabled>-- Musei e Arte --</option>
         <option value="musonline">Museo online</option>
