@@ -1,11 +1,11 @@
 const Input = require("./locales.json"), fs = require("fs");
-let Output = "";
+let Output = "", Output2 = "";
 
 const utils = {
   /**
    * @param {String} pagename
    */
-  head: function(pagename, based) {
+  head: function(pagename) {
     return `<!DOCTYPE html>
 <html>
   <head>
@@ -41,6 +41,7 @@ const utils = {
     <ul>
       ${elements}
     </ul>
+    <a href="/">↩ Torna alle categorie</a>
     <br>
     <footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -67,7 +68,8 @@ Output += `  <body>
       <li class="list-group-item"><a href="/libro">${Input["#libro"]}</a></li>
       <li class="list-group-item"><a href="/film">${Input["#film"]}</a></li>
       <li class="list-group-item"><a href="/audio">${Input["#audio"]}</a></li>
-      <li class="list-group-item"><a href="/green">${Input["#green"]}</li></a>
+      <li class="list-group-item"><a href="/green">${Input["#green"]}</a></li>
+      <li class="list-group-item"><a href="/new">Suggerisci un elemento</a></li>
     </ul>
     <br>
     <footer style='backrgound-color: white, position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>
@@ -80,6 +82,60 @@ Output += `  <body>
 fs.writeFile("index.html", Output, (err) => {
   if (err) throw err;
   console.log("home done");
+});
+
+// submit
+Output2 += utils.head(Input.shared.htmlTitles['form']);
+Output2 += `  <body>
+    <h1 class="display-1">Aggiungi un elemento</h1>
+    <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
+      <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
+      <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
+      <label>Categorie: <select name="categoria" multiple required>
+        <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
+        <option value="museo">${Input["#museo"]}</option>
+        <option value="divertimento">${Input["#divertimento"]}</option>
+        <option value="rivista">${Input["#rivista"]}</option>
+        <option value="libro">${Input["#libro"]}</option>
+        <option value="film">${Input["#film"]}</option>
+        <option value="audio">${Input["#audio"]}</option>
+        <option value="green">${Input["#green"]}</option>
+      </select></label><br>
+      <label>Sottocategorie: <select name="scat" multiple>
+        <option value="" selected>Non lo so</option>
+        <option disabled>-- ${Input["#museo"]} --</option>
+        <option value="musonline">Museo online</option>
+        <option disabled>-- ${Input["#divertimento"]} --</option>
+        <option value="gioco">Gioco</option>
+        <option value="attivita">Attivitá</option>
+        <option disabled>-- ${Input["#rivista"]} --</option>
+        <option value="tempolibero">Tempo libero</option>
+        <option value="edu">Educativo</option>
+        <option disabled>-- ${Input["#libro"]} --</option>
+        <option value="audiobook">Audiolibro</option>
+        <option value="ebook">E-book</option>
+        <option disabled>-- ${Input["#film"]} --</option>
+        <option value="doc">Documentario</option>
+        <option value="stream">Film in streaming</option>
+        <option disabled>-- ${Input["#audio"]} --</option>
+        <option value="musica">Musica</option>
+        <option value="spartito">Spartito</option>
+        <option disabled>-- ${Input["#green"]} --</option>
+        <option value="green">Materiale</option>
+        <option value="atgr">Attivitá</option>
+        <option disabled>-- Generale --</option>
+        <option value="altro">Altro</option>
+      </select></label><br>
+      <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>
+      <div data-netlify-recaptcha="true"></div>
+    </form>
+  </body>
+</html>`
+
+fs.mkdir("new", (err) => {if (err) console.log("Directory exists : new (", ""+err, ")")});
+fs.writeFile("new/index.html", Output2, (err) => {
+  if (err) throw err;
+  console.log("form done");
 });
 
 function child(name) {

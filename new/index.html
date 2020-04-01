@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Suggerisci @ TempoBenSpeso.online</title>
+    <base id="base" />
+    <meta name="viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Tempo Ben Speso Online">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Una lista aggiornata (circa) di cose interessanti e gratuite da fare in questo periodo.">
+    <meta property="og:url" content="/">
+    <meta property="og:image" content="/media/logo.png">
+    <meta property="og:image:alt" content="Logo Tempo Ben Speso Online">
+    <meta property="keywords" content="covid,coronavirus,tempobenspeso,tempo ben speso,casa,tempobenspesoonline,tempo ben speso online">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="shortcut icon" href="/media/logo.png" type="image/png">
+  </head>
+  <body>
+    <h1 class="display-1">Aggiungi un elemento</h1>
+    <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
+      <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
+      <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
+      <label>Categorie: <select name="categoria" multiple required>
+        <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
+        <option value="museo">Musei e Arte</option>
+        <option value="divertimento">Divertimento e bambini</option>
+        <option value="rivista">Riviste, periodici e giornali.</option>
+        <option value="libro">Libri</option>
+        <option value="film">Video, film, streaming e documentari</option>
+        <option value="audio">Audio, musiche, dischi e spartiti.</option>
+        <option value="green">Futuro, sostenibilitá e green</option>
+      </select></label><br>
+      <label>Sottocategorie: <select name="scat" multiple>
+        <option value="" selected>Non lo so</option>
+        <option disabled>-- Musei e Arte --</option>
+        <option value="musonline">Museo online</option>
+        <option disabled>-- Divertimento e bambini --</option>
+        <option value="gioco">Gioco</option>
+        <option value="attivita">Attivitá</option>
+        <option disabled>-- Riviste, periodici e giornali. --</option>
+        <option value="tempolibero">Tempo libero</option>
+        <option value="edu">Educativo</option>
+        <option disabled>-- Libri --</option>
+        <option value="audiobook">Audiolibro</option>
+        <option value="ebook">E-book</option>
+        <option disabled>-- Video, film, streaming e documentari --</option>
+        <option value="doc">Documentario</option>
+        <option value="stream">Film in streaming</option>
+        <option disabled>-- Audio, musiche, dischi e spartiti. --</option>
+        <option value="musica">Musica</option>
+        <option value="spartito">Spartito</option>
+        <option disabled>-- Futuro, sostenibilitá e green --</option>
+        <option value="green">Materiale</option>
+        <option value="atgr">Attivitá</option>
+        <option disabled>-- Generale --</option>
+        <option value="altro">Altro</option>
+      </select></label><br>
+      <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>
+      <div data-netlify-recaptcha="true"></div>
+    </form>
+  </body>
+</html>
