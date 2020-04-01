@@ -72,7 +72,7 @@ Output += `  <body>
       <li class="list-group-item"><a href="/new">Suggerisci un elemento</a></li>
     </ul>
     <br>
-    <footer style='backrgound-color: white, position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>
+    <footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -99,33 +99,34 @@ Output2 += `  <body>
         <label><input type="checkbox" name="c-film">${Input["#film"]}</label>
         <label><input type="checkbox" name="c-audio">${Input["#audio"]}</label>
         <label><input type="checkbox" name="c-green">${Input["#green"]}</label>
-      </select></label><br>
-      <label>Sottocategorie: <select name="scat" multiple>
-        <label><input type="checkbox" name="sc-idk" selected>Non lo so</label>
-        <h6>-- ${Input["#museo"]} --</h6>
-        <label><input type="checkbox" name="sc-musonline">Museo online</label>
-        <h6>-- ${Input["#divertimento"]} --</h6>
-        <label><input type="checkbox" name="sc-gioco">Gioco</label>
-        <label><input type="checkbox" name="sc-attivita">Attivitá</label>
-        <h6>-- ${Input["#rivista"]} --</h6>
-        <label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
-        <label><input type="checkbox" name="sc-edu">Educativo</label>
-        <h6>-- ${Input["#libro"]} --</h6>
-        <label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
-        <label><input type="checkbox" name="sc-ebook">E-book</label>
-        <h6>-- ${Input["#film"]} --</h6>
-        <label><input type="checkbox" name="sc-doc">Documentario</label>
-        <label><input type="checkbox" name="sc-stream">Film in streaming</label>
-        <h6>-- ${Input["#audio"]} --</h6>
-        <label><input type="checkbox" name="sc-musica">Musica</label>
-        <label><input type="checkbox" name="sc-spartito">Spartito</label>
-        <h6>-- ${Input["#green"]} --</h6>
-        <label><input type="checkbox" name="sc-green">Materiale</label>
-        <label><input type="checkbox" name="sc-atgr">Attivitá</label>
-        <h6>-- Generale --</h6>
-        <label><input type="checkbox" name="sc-altro">Altro</label>
-        </optgroup>
-      </select></label><br>
+      </label><br>
+      <label>Sottocategorie:
+        <label><input type="radio" name="sc-idk" selected>Non lo so</label>
+        <label><input type="radio" name="sc-idk">Lo so
+          <h6>-- ${Input["#museo"]} --</h6>
+          &Tab;<label><input type="checkbox" name="sc-musonline">Museo online</label>
+          <h6>-- ${Input["#divertimento"]} --</h6>
+          &Tab;<label><input type="checkbox" name="sc-gioco">Gioco</label>
+          &Tab;<label><input type="checkbox" name="sc-attivita">Attivitá</label>
+          <h6>-- ${Input["#rivista"]} --</h6>
+          &Tab;<label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
+          &Tab;<label><input type="checkbox" name="sc-edu">Educativo</label>
+          <h6>-- ${Input["#libro"]} --</h6>
+          &Tab;<label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
+          &Tab;<label><input type="checkbox" name="sc-ebook">E-book</label>
+          <h6>-- ${Input["#film"]} --</h6>
+          &Tab;<label><input type="checkbox" name="sc-doc">Documentario</label>
+          &Tab;<label><input type="checkbox" name="sc-stream">Film in streaming</label>
+          <h6>-- ${Input["#audio"]} --</h6>
+          &Tab;<label><input type="checkbox" name="sc-musica">Musica</label>
+          &Tab;<label><input type="checkbox" name="sc-spartito">Spartito</label>
+          <h6>-- ${Input["#green"]} --</h6>
+          &Tab;<label><input type="checkbox" name="sc-green">Materiale</label>
+          &Tab;<label><input type="checkbox" name="sc-atgr">Attivitá</label>
+          <h6>-- Generale --</h6>
+          &Tab;<label><input type="checkbox" name="sc-altro">Altro</label>
+        </label>
+      </label><br>
       <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>
       <div data-netlify-recaptcha="true"></div>
       <button type="submit" class="btn btn-outline-primary">Vai!</button>
