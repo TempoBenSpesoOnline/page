@@ -91,7 +91,7 @@ Output2 += `  <body>
     <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
       <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
-      <label>Categorie: <select name="categoria" multiple required size="1">
+      <label>Categorie: <select name="categoria" multiple required>
         <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
         <option value="museo">${Input["#museo"]}</option>
         <option value="divertimento">${Input["#divertimento"]}</option>
@@ -101,33 +101,42 @@ Output2 += `  <body>
         <option value="audio">${Input["#audio"]}</option>
         <option value="green">${Input["#green"]}</option>
       </select></label><br>
-      <label>Sottocategorie: <select name="scat" multiple size="1">
+      <label>Sottocategorie: <select name="scat" multiple>
         <option value="" selected>Non lo so</option>
-        <option disabled>-- ${Input["#museo"]} --</option>
-        <option value="musonline">Museo online</option>
-        <option disabled>-- ${Input["#divertimento"]} --</option>
-        <option value="gioco">Gioco</option>
-        <option value="attivita">Attivitá</option>
-        <option disabled>-- ${Input["#rivista"]} --</option>
-        <option value="tempolibero">Tempo libero</option>
-        <option value="edu">Educativo</option>
-        <option disabled>-- ${Input["#libro"]} --</option>
-        <option value="audiobook">Audiolibro</option>
-        <option value="ebook">E-book</option>
-        <option disabled>-- ${Input["#film"]} --</option>
-        <option value="doc">Documentario</option>
-        <option value="stream">Film in streaming</option>
-        <option disabled>-- ${Input["#audio"]} --</option>
-        <option value="musica">Musica</option>
-        <option value="spartito">Spartito</option>
-        <option disabled>-- ${Input["#green"]} --</option>
-        <option value="green">Materiale</option>
-        <option value="atgr">Attivitá</option>
-        <option disabled>-- Generale --</option>
-        <option value="altro">Altro</option>
+        <optgroup label="-- ${Input["#museo"]} --">
+          <option value="musonline">Museo online</option>
+        </optgroup>
+        <optgroup label="-- ${Input["#divertimento"]} --">
+          <option value="gioco">Gioco</option>
+          <option value="attivita">Attivitá</option>
+        </optgroup>
+        <optgroup label="-- ${Input["#rivista"]} --">
+          <option value="tempolibero">Tempo libero</option>
+          <option value="edu">Educativo</option>
+        </optgroup
+        <optgroup label="-- ${Input["#libro"]} --"
+          <option value="audiobook">Audiolibro</option>
+          <option value="ebook">E-book</option>
+        </optgroup>
+        <optgroup label="-- ${Input["#film"]} --">
+          <option value="doc">Documentario</option>
+          <option value="stream">Film in streaming</option>
+        </optgroup
+        <optgroup label="-- ${Input["#audio"]} --">
+          <option value="musica">Musica</option>
+          <option value="spartito">Spartito</option>
+        </optgroup>
+        <optgroup label="-- ${Input["#green"]} --">
+          <option value="green">Materiale</option>
+          <option value="atgr">Attivitá</option>
+        </optgroup>
+        <optgroup label="-- Generale --">
+          <option value="altro">Altro</option>
+        </optgroup>
       </select></label><br>
       <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>
       <div data-netlify-recaptcha="true"></div>
+      <button type="submit" class="btn btn-outline-primary">Vai!</button>
     </form>
   </body>
 </html>`

@@ -19,7 +19,7 @@
     <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
       <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
-      <label>Categorie: <select name="categoria" multiple required size="1">
+      <label>Categorie: <select name="categoria" multiple required>
         <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
         <option value="museo">Musei e Arte</option>
         <option value="divertimento">Divertimento e bambini</option>
@@ -29,33 +29,42 @@
         <option value="audio">Audio, musiche, dischi e spartiti.</option>
         <option value="green">Futuro, sostenibilitá e green</option>
       </select></label><br>
-      <label>Sottocategorie: <select name="scat" multiple size="1">
+      <label>Sottocategorie: <select name="scat" multiple>
         <option value="" selected>Non lo so</option>
-        <option disabled>-- Musei e Arte --</option>
-        <option value="musonline">Museo online</option>
-        <option disabled>-- Divertimento e bambini --</option>
-        <option value="gioco">Gioco</option>
-        <option value="attivita">Attivitá</option>
-        <option disabled>-- Riviste, periodici e giornali. --</option>
-        <option value="tempolibero">Tempo libero</option>
-        <option value="edu">Educativo</option>
-        <option disabled>-- Libri --</option>
-        <option value="audiobook">Audiolibro</option>
-        <option value="ebook">E-book</option>
-        <option disabled>-- Video, film, streaming e documentari --</option>
-        <option value="doc">Documentario</option>
-        <option value="stream">Film in streaming</option>
-        <option disabled>-- Audio, musiche, dischi e spartiti. --</option>
-        <option value="musica">Musica</option>
-        <option value="spartito">Spartito</option>
-        <option disabled>-- Futuro, sostenibilitá e green --</option>
-        <option value="green">Materiale</option>
-        <option value="atgr">Attivitá</option>
-        <option disabled>-- Generale --</option>
-        <option value="altro">Altro</option>
+        <optgroup label="-- Musei e Arte --">
+          <option value="musonline">Museo online</option>
+        </optgroup>
+        <optgroup label="-- Divertimento e bambini --">
+          <option value="gioco">Gioco</option>
+          <option value="attivita">Attivitá</option>
+        </optgroup>
+        <optgroup label="-- Riviste, periodici e giornali. --">
+          <option value="tempolibero">Tempo libero</option>
+          <option value="edu">Educativo</option>
+        </optgroup
+        <optgroup label="-- Libri --"
+          <option value="audiobook">Audiolibro</option>
+          <option value="ebook">E-book</option>
+        </optgroup>
+        <optgroup label="-- Video, film, streaming e documentari --">
+          <option value="doc">Documentario</option>
+          <option value="stream">Film in streaming</option>
+        </optgroup
+        <optgroup label="-- Audio, musiche, dischi e spartiti. --">
+          <option value="musica">Musica</option>
+          <option value="spartito">Spartito</option>
+        </optgroup>
+        <optgroup label="-- Futuro, sostenibilitá e green --">
+          <option value="green">Materiale</option>
+          <option value="atgr">Attivitá</option>
+        </optgroup>
+        <optgroup label="-- Generale --">
+          <option value="altro">Altro</option>
+        </optgroup>
       </select></label><br>
       <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>
       <div data-netlify-recaptcha="true"></div>
+      <button type="submit" class="btn btn-outline-primary">Vai!</button>
     </form>
   </body>
 </html>
