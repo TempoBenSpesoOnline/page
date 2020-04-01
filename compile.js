@@ -101,36 +101,35 @@ Output2 += `  <body>
         <label><input type="checkbox" name="c-green">${Input["#green"]}</label>
       </label><br>
       <label>Sottocategorie:
-        <label><input type="radio" name="sc-idk" selected>Non lo so</label>
-        <label><input type="radio" name="sc-idk">Lo so
-          <h6>-- ${Input["#museo"]} --</h6>
-          &Tab;<label><input type="checkbox" name="sc-musonline">Museo online</label>
-          <h6>-- ${Input["#divertimento"]} --</h6>
-          &Tab;<label><input type="checkbox" name="sc-gioco">Gioco</label>
-          &Tab;<label><input type="checkbox" name="sc-attivita">Attivitá</label>
-          <h6>-- ${Input["#rivista"]} --</h6>
-          &Tab;<label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
-          &Tab;<label><input type="checkbox" name="sc-edu">Educativo</label>
-          <h6>-- ${Input["#libro"]} --</h6>
-          &Tab;<label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
-          &Tab;<label><input type="checkbox" name="sc-ebook">E-book</label>
-          <h6>-- ${Input["#film"]} --</h6>
-          &Tab;<label><input type="checkbox" name="sc-doc">Documentario</label>
-          &Tab;<label><input type="checkbox" name="sc-stream">Film in streaming</label>
-          <h6>-- ${Input["#audio"]} --</h6>
-          &Tab;<label><input type="checkbox" name="sc-musica">Musica</label>
-          &Tab;<label><input type="checkbox" name="sc-spartito">Spartito</label>
-          <h6>-- ${Input["#green"]} --</h6>
-          &Tab;<label><input type="checkbox" name="sc-green">Materiale</label>
-          &Tab;<label><input type="checkbox" name="sc-atgr">Attivitá</label>
-          <h6>-- Generale --</h6>
-          &Tab;<label><input type="checkbox" name="sc-altro">Altro</label>
-        </label>
+        <label><input type="checkbox" name="sc-idk" selected>Non lo so</label>
+        <h6>-- ${Input["#museo"]} --</h6>
+        &Tab;<label><input type="checkbox" name="sc-musonline">Museo online</label>
+        <h6>-- ${Input["#divertimento"]} --</h6>
+        &Tab;<label><input type="checkbox" name="sc-gioco">Gioco</label>
+        &Tab;<label><input type="checkbox" name="sc-attivita">Attivitá</label>
+        <h6>-- ${Input["#rivista"]} --</h6>
+        &Tab;<label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
+        &Tab;<label><input type="checkbox" name="sc-edu">Educativo</label>
+        <h6>-- ${Input["#libro"]} --</h6>
+        &Tab;<label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
+        &Tab;<label><input type="checkbox" name="sc-ebook">E-book</label>
+        <h6>-- ${Input["#film"]} --</h6>
+        &Tab;<label><input type="checkbox" name="sc-doc">Documentario</label>
+        &Tab;<label><input type="checkbox" name="sc-stream">Film in streaming</label>
+        <h6>-- ${Input["#audio"]} --</h6>
+        &Tab;<label><input type="checkbox" name="sc-musica">Musica</label>
+        &Tab;<label><input type="checkbox" name="sc-spartito">Spartito</label>
+        <h6>-- ${Input["#green"]} --</h6>
+        &Tab;<label><input type="checkbox" name="sc-green">Materiale</label>
+        &Tab;<label><input type="checkbox" name="sc-atgr">Attivitá</label>
+        <h6>-- Generale --</h6>
+        &Tab;<label><input type="checkbox" name="sc-altro">Altro</label>
       </label><br>
       <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>
       <div data-netlify-recaptcha="true"></div>
       <button type="submit" class="btn btn-outline-primary">Vai!</button>
     </form>
+    <footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>
   </body>
 </html>`
 
