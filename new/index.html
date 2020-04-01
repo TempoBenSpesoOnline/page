@@ -19,47 +19,39 @@
     <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
       <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
-      <label>Categorie: <select name="categoria" multiple required>
-        <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
-        <option value="museo">Musei e Arte</option>
-        <option value="divertimento">Divertimento e bambini</option>
-        <option value="rivista">Riviste, periodici e giornali.</option>
-        <option value="libro">Libri</option>
-        <option value="film">Video, film, streaming e documentari</option>
-        <option value="audio">Audio, musiche, dischi e spartiti.</option>
-        <option value="green">Futuro, sostenibilitá e green</option>
+      <label>Categorie: 
+        <label><input type="checkbox" name="c-museo">Musei e Arte</label>
+        <label><input type="checkbox" name="c-divertimento">Divertimento e bambini</label>
+        <label><input type="checkbox" name="c-rivista">Riviste, periodici e giornali.</label>
+        <label><input type="checkbox" name="c-libro">Libri</la>
+        <label><input type="checkbox" name="c-film">Video, film, streaming e documentari</label>
+        <label><input type="checkbox" name="c-audio">Audio, musiche, dischi e spartiti.</label>
+        <label><input type="checkbox" name="c-green">Futuro, sostenibilitá e green</label>
       </select></label><br>
       <label>Sottocategorie: <select name="scat" multiple>
-        <option value="" selected>Non lo so</option>
-        <optgroup label="-- Musei e Arte --">
-          <option value="musonline">Museo online</option>
-        </optgroup>
-        <optgroup label="-- Divertimento e bambini --">
-          <option value="gioco">Gioco</option>
-          <option value="attivita">Attivitá</option>
-        </optgroup>
-        <optgroup label="-- Riviste, periodici e giornali. --">
-          <option value="tempolibero">Tempo libero</option>
-          <option value="edu">Educativo</option>
-        </optgroup
-        <optgroup label="-- Libri --"
-          <option value="audiobook">Audiolibro</option>
-          <option value="ebook">E-book</option>
-        </optgroup>
-        <optgroup label="-- Video, film, streaming e documentari --">
-          <option value="doc">Documentario</option>
-          <option value="stream">Film in streaming</option>
-        </optgroup
-        <optgroup label="-- Audio, musiche, dischi e spartiti. --">
-          <option value="musica">Musica</option>
-          <option value="spartito">Spartito</option>
-        </optgroup>
-        <optgroup label="-- Futuro, sostenibilitá e green --">
-          <option value="green">Materiale</option>
-          <option value="atgr">Attivitá</option>
-        </optgroup>
-        <optgroup label="-- Generale --">
-          <option value="altro">Altro</option>
+        <label><input type="checkbox" name="sc-idk" selected>Non lo so</label>
+        <h6>-- Musei e Arte --</h6>
+        <label><input type="checkbox" name="sc-musonline">Museo online</label>
+        <h6>-- Divertimento e bambini --</h6>
+        <label><input type="checkbox" name="sc-gioco">Gioco</label>
+        <label><input type="checkbox" name="sc-attivita">Attivitá</label>
+        <h6>-- Riviste, periodici e giornali. --</h6>
+        <label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
+        <label><input type="checkbox" name="sc-edu">Educativo</label>
+        <h6>-- Libri --</h6>
+        <label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
+        <label><input type="checkbox" name="sc-ebook">E-book</label>
+        <h6>-- Video, film, streaming e documentari --</h6>
+        <label><input type="checkbox" name="sc-doc">Documentario</label>
+        <label><input type="checkbox" name="sc-stream">Film in streaming</label>
+        <h6>-- Audio, musiche, dischi e spartiti. --</h6>
+        <label><input type="checkbox" name="sc-musica">Musica</label>
+        <label><input type="checkbox" name="sc-spartito">Spartito</label>
+        <h6>-- Futuro, sostenibilitá e green --</h6>
+        <label><input type="checkbox" name="sc-green">Materiale</label>
+        <label><input type="checkbox" name="sc-atgr">Attivitá</label>
+        <h6>-- Generale --</h6>
+        <label><input type="checkbox" name="sc-altro">Altro</label>
         </optgroup>
       </select></label><br>
       <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>

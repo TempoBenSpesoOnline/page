@@ -91,47 +91,39 @@ Output2 += `  <body>
     <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
       <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
-      <label>Categorie: <select name="categoria" multiple required>
-        <option value="!" disabled selected>-- Selezionare una o piú categorie --</option>
-        <option value="museo">${Input["#museo"]}</option>
-        <option value="divertimento">${Input["#divertimento"]}</option>
-        <option value="rivista">${Input["#rivista"]}</option>
-        <option value="libro">${Input["#libro"]}</option>
-        <option value="film">${Input["#film"]}</option>
-        <option value="audio">${Input["#audio"]}</option>
-        <option value="green">${Input["#green"]}</option>
+      <label>Categorie: 
+        <label><input type="checkbox" name="c-museo">${Input["#museo"]}</label>
+        <label><input type="checkbox" name="c-divertimento">${Input["#divertimento"]}</label>
+        <label><input type="checkbox" name="c-rivista">${Input["#rivista"]}</label>
+        <label><input type="checkbox" name="c-libro">${Input["#libro"]}</la>
+        <label><input type="checkbox" name="c-film">${Input["#film"]}</label>
+        <label><input type="checkbox" name="c-audio">${Input["#audio"]}</label>
+        <label><input type="checkbox" name="c-green">${Input["#green"]}</label>
       </select></label><br>
       <label>Sottocategorie: <select name="scat" multiple>
-        <option value="" selected>Non lo so</option>
-        <optgroup label="-- ${Input["#museo"]} --">
-          <option value="musonline">Museo online</option>
-        </optgroup>
-        <optgroup label="-- ${Input["#divertimento"]} --">
-          <option value="gioco">Gioco</option>
-          <option value="attivita">Attivitá</option>
-        </optgroup>
-        <optgroup label="-- ${Input["#rivista"]} --">
-          <option value="tempolibero">Tempo libero</option>
-          <option value="edu">Educativo</option>
-        </optgroup
-        <optgroup label="-- ${Input["#libro"]} --"
-          <option value="audiobook">Audiolibro</option>
-          <option value="ebook">E-book</option>
-        </optgroup>
-        <optgroup label="-- ${Input["#film"]} --">
-          <option value="doc">Documentario</option>
-          <option value="stream">Film in streaming</option>
-        </optgroup
-        <optgroup label="-- ${Input["#audio"]} --">
-          <option value="musica">Musica</option>
-          <option value="spartito">Spartito</option>
-        </optgroup>
-        <optgroup label="-- ${Input["#green"]} --">
-          <option value="green">Materiale</option>
-          <option value="atgr">Attivitá</option>
-        </optgroup>
-        <optgroup label="-- Generale --">
-          <option value="altro">Altro</option>
+        <label><input type="checkbox" name="sc-idk" selected>Non lo so</label>
+        <h6>-- ${Input["#museo"]} --</h6>
+        <label><input type="checkbox" name="sc-musonline">Museo online</label>
+        <h6>-- ${Input["#divertimento"]} --</h6>
+        <label><input type="checkbox" name="sc-gioco">Gioco</label>
+        <label><input type="checkbox" name="sc-attivita">Attivitá</label>
+        <h6>-- ${Input["#rivista"]} --</h6>
+        <label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
+        <label><input type="checkbox" name="sc-edu">Educativo</label>
+        <h6>-- ${Input["#libro"]} --</h6>
+        <label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
+        <label><input type="checkbox" name="sc-ebook">E-book</label>
+        <h6>-- ${Input["#film"]} --</h6>
+        <label><input type="checkbox" name="sc-doc">Documentario</label>
+        <label><input type="checkbox" name="sc-stream">Film in streaming</label>
+        <h6>-- ${Input["#audio"]} --</h6>
+        <label><input type="checkbox" name="sc-musica">Musica</label>
+        <label><input type="checkbox" name="sc-spartito">Spartito</label>
+        <h6>-- ${Input["#green"]} --</h6>
+        <label><input type="checkbox" name="sc-green">Materiale</label>
+        <label><input type="checkbox" name="sc-atgr">Attivitá</label>
+        <h6>-- Generale --</h6>
+        <label><input type="checkbox" name="sc-altro">Altro</label>
         </optgroup>
       </select></label><br>
       <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="agree" required /></label><br>
