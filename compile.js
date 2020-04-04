@@ -168,7 +168,7 @@ Output += `  <body>
 		<div class="container marketing">
 			<div class="row">
 				<div class="col-lg-4">
-					<img src="/img/museo.png" alt="Museo" class="rounded-circle" width=140 height=140>
+					<img src="/img/museo.webp" alt="Museo" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<museo"]}</h2>
 					<p>${Input["<museo-desc"] || ""}</p>
 					<p>
