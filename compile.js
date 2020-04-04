@@ -11,6 +11,15 @@ const utils = {
 		return `<!DOCTYPE html>
 <html lang="it-IT">
 	<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-162820131-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'UA-162820131-1');
+	</script>
+
 		<title>${pagename || "Home"}${Input.shared.htmlTitle}</title>
 		<meta name="viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta property="og:title" content="${Input.shared.ogTitle}">
