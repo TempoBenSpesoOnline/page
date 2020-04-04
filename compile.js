@@ -41,14 +41,14 @@ const utils = {
 					<div class="card-body">
 						<h5 class="card-title">${el.title}</h5>
 						<p class="card-text">
-							${el.desc}
+							${el.desc || ''}
 							${el.warn ? `<div class="alert alert-warning">
 								${el.warn}
 							</div>` : ''}
 							${el.info ? `<div class="alert alert-info">
 								${el.info}
 							</div>` : ''}
-							${el.href ? `<br><a class="btn btn-outline-secondary" href="${el.href}">Vai al contenuto »</a>` : ''}
+							${el.href ? `<div><a class="btn btn-outline-secondary" href="${el.href}">Vai al contenuto »</a></div>` : ''}
 						</p>
 						${el.sc ? `<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
@@ -206,6 +206,7 @@ Output += `  <body>
 						<a href="/audio" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
 				</div>
+				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
 					<img src="/img/green.png" alt="Museo" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<green"]}</h2>
