@@ -163,62 +163,64 @@ Output += `  <body>
 		<h1 class="display-1">${Input["/"].title}</h1>
 		<h2 class="display-2">${Input["/"].motto}</h2>
 		<h3 class="display-3">${Input["/"].description}</h3>
-		<div class="row">
-			<div class="col-lg-4">
-				<img src="/img/museo.png" alt="Museo" class="rounded-circle" width=140 height=140>
-				<h2>${Input["<museo"]}</h2>
-				<p>${Input["<museo-desc"]}</p>
-				<p>
-					<a href="/museo" class="btn btn-secondary" role="button">Vai alla categoria »</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="/img/divertimento.png" alt="Divertimento" class="rounded-circle" width=140 height=140>
-				<h2>${Input["<divertimento"]}</h2>
-				<p>${Input["<divertimento-desc"]}</p>
-				<p>
-					<a href="/divertimento" class="btn btn-secondary" role="button">Vai alla categoria »</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="/img/rivista.png" alt="Rivista" class="rounded-circle" width=140 height=140>
-				<h2>${Input["<rivista"]}</h2>
-				<p>${Input["<rivista-desc"]}</p>
-				<p>
-					<a href="/rivista" class="btn btn-secondary" role="button">Vai alla categoria »</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="/img/libro.png" alt="Libro" class="rounded-circle" width=140 height=140>
-				<h2>${Input["<libro"]}</h2>
-				<p>${Input["<libro-desc"]}</p>
-				<p>
-					<a href="/libro" class="btn btn-secondary" role="button">Vai alla categoria »</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="/img/film.png" alt="Film" class="rounded-circle" width=140 height=140>
-				<h2>${Input["<film"]}</h2>
-				<p>${Input["<film-desc"]}</p>
-				<p>
-					<a href="/film" class="btn btn-secondary" role="button">Vai alla categoria »</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="/img/audio.png" alt="Audio" class="rounded-circle" width=140 height=140>
-				<h2>${Input["<audio"]}</h2>
-				<p>${Input["<audio-desc"]}</p>
-				<p>
-					<a href="/audio" class="btn btn-secondary" role="button">Vai alla categoria »</a>
-				</p>
-			</div>
-			<div class="col-lg-4">
-				<img src="/img/green.png" alt="Museo" class="rounded-circle" width=140 height=140>
-				<h2>${Input["<green"]}</h2>
-				<p>${Input["<green-desc"]}</p>
-				<p>
-					<a href="/green" class="btn btn-secondary" role="button">Vai alla categoria »</a>
-				</p>
+		<div class="container marketing"
+			<div class="row">
+				<div class="col-lg-4">
+					<img src="/img/museo.png" alt="Museo" class="rounded-circle" width=140 height=140>
+					<h2>${Input["<museo"]}</h2>
+					<p>${Input["<museo-desc"]}</p>
+					<p>
+						<a href="/museo" class="btn btn-secondary" role="button">Vai alla categoria »</a>
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<img src="/img/divertimento.png" alt="Divertimento" class="rounded-circle" width=140 height=140>
+					<h2>${Input["<divertimento"]}</h2>
+					<p>${Input["<divertimento-desc"]}</p>
+					<p>
+						<a href="/divertimento" class="btn btn-secondary" role="button">Vai alla categoria »</a>
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<img src="/img/rivista.png" alt="Rivista" class="rounded-circle" width=140 height=140>
+					<h2>${Input["<rivista"]}</h2>
+					<p>${Input["<rivista-desc"]}</p>
+					<p>
+						<a href="/rivista" class="btn btn-secondary" role="button">Vai alla categoria »</a>
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<img src="/img/libro.png" alt="Libro" class="rounded-circle" width=140 height=140>
+					<h2>${Input["<libro"]}</h2>
+					<p>${Input["<libro-desc"]}</p>
+					<p>
+						<a href="/libro" class="btn btn-secondary" role="button">Vai alla categoria »</a>
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<img src="/img/film.png" alt="Film" class="rounded-circle" width=140 height=140>
+					<h2>${Input["<film"]}</h2>
+					<p>${Input["<film-desc"]}</p>
+					<p>
+						<a href="/film" class="btn btn-secondary" role="button">Vai alla categoria »</a>
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<img src="/img/audio.png" alt="Audio" class="rounded-circle" width=140 height=140>
+					<h2>${Input["<audio"]}</h2>
+					<p>${Input["<audio-desc"]}</p>
+					<p>
+						<a href="/audio" class="btn btn-secondary" role="button">Vai alla categoria »</a>
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<img src="/img/green.png" alt="Museo" class="rounded-circle" width=140 height=140>
+					<h2>${Input["<green"]}</h2>
+					<p>${Input["<green-desc"]}</p>
+					<p>
+						<a href="/green" class="btn btn-secondary" role="button">Vai alla categoria »</a>
+					</p>
+				</div>
 			</div>
 		</div>
 
