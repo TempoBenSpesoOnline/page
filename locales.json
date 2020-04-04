@@ -207,11 +207,11 @@
 		"motto": "Dove il divertimeto é di casa. Letteralmente.",
 		"description": "Una lista aggiornata (circa) di cose interessanti e gratuite da fare in questo periodo."
 	},
-	"#museo": "Musei e Arte",
-	"#divertimento": "Divertimento e bambini",
-	"#rivista": "Riviste, periodici e giornali.",
-	"#libro": "Libri",
-	"#film": "Video, film, streaming e documentari",
-	"#audio": "Audio, musiche, dischi e spartiti.",
-	"#green": "Futuro, sostenibilitá e green"
+	"<museo": "Musei e Arte",
+	"<divertimento": "Divertimento e bambini",
+	"<rivista": "Riviste, periodici e giornali.",
+	"<libro": "Libri",
+	"<film": "Video, film, streaming e documentari",
+	"<audio": "Audio, musiche, dischi e spartiti.",
+	"<green": "Futuro, sostenibilitá e green"
 }

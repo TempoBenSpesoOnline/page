@@ -35,7 +35,7 @@ const utils = {
       if (el.cat.indexOf(name) != -1) {elements.push(el)}
     });
     elements.forEach((el, id) => {
-      elements[id] = `<li id="${el.ref}"><a href="${el.href}">${el.title}: ${el.desc}</a>${el.warn ? ` <span class="btn btn-outline-warning">${el.warn}</span>` : `` }${el.info ? ` <span class="btn btn-outline-info">${el.info}</span>` : ``}<span class="btn invisible">Se vedi questo, allora probabilmente non riescia vedere neanche il resto del sito.</span></li>`;
+      elements[id] = `<li id="${el.ref}"><a href="${el.href}">${el.title || el.ref}: ${el.desc}</a>${el.warn ? ` <span class="btn btn-outline-warning">${el.warn}</span>` : `` }${el.info ? ` <span class="btn btn-outline-info">${el.info}</span>` : ``}<span class="btn invisible">Se vedi questo, allora probabilmente non riescia vedere neanche il resto del sito.</span></li>`;
     });
     elements.forEach((el) => {_tempEl += el + "\n"})
     elements = _tempEl;
@@ -65,13 +65,13 @@ Output += `  <body>
     <h1 class="display-3">${Input["/"].description}</h1>
     <h2>Categorie:</h2>
     <ul class="w-75 w-sm-50">
-      <li class="list-group-item"><a href="/museo">${Input["#museo"]}</a></li>
-      <li class="list-group-item"><a href="/divertimento">${Input["#divertimento"]}</a></li>
-      <li class="list-group-item"><a href="/rivista">${Input["#rivista"]}</a></li>
-      <li class="list-group-item"><a href="/libro">${Input["#libro"]}</a></li>
-      <li class="list-group-item"><a href="/film">${Input["#film"]}</a></li>
-      <li class="list-group-item"><a href="/audio">${Input["#audio"]}</a></li>
-      <li class="list-group-item"><a href="/green">${Input["#green"]}</a></li>
+      <li class="list-group-item"><a href="/museo">${Input["<museo"]}</a></li>
+      <li class="list-group-item"><a href="/divertimento">${Input["<divertimento"]}</a></li>
+      <li class="list-group-item"><a href="/rivista">${Input["<rivista"]}</a></li>
+      <li class="list-group-item"><a href="/libro">${Input["<libro"]}</a></li>
+      <li class="list-group-item"><a href="/film">${Input["<film"]}</a></li>
+      <li class="list-group-item"><a href="/audio">${Input["<audio"]}</a></li>
+      <li class="list-group-item"><a href="/green">${Input["<green"]}</a></li>
       <li class="list-group-item"><a href="/new">Suggerisci un elemento</a></li>
     </ul>
     <br>
@@ -95,34 +95,34 @@ Output2 += `  <body>
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
       <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
       <label>Categorie: 
-        <label><input type="checkbox" name="c-museo">${Input["#museo"]}</label>
-        <label><input type="checkbox" name="c-divertimento">${Input["#divertimento"]}</label>
-        <label><input type="checkbox" name="c-rivista">${Input["#rivista"]}</label>
-        <label><input type="checkbox" name="c-libro">${Input["#libro"]}</la>
-        <label><input type="checkbox" name="c-film">${Input["#film"]}</label>
-        <label><input type="checkbox" name="c-audio">${Input["#audio"]}</label>
-        <label><input type="checkbox" name="c-green">${Input["#green"]}</label>
+        <label><input type="checkbox" name="c-museo">${Input["<museo"]}</label>
+        <label><input type="checkbox" name="c-divertimento">${Input["<divertimento"]}</label>
+        <label><input type="checkbox" name="c-rivista">${Input["<rivista"]}</label>
+        <label><input type="checkbox" name="c-libro">${Input["<libro"]}</la>
+        <label><input type="checkbox" name="c-film">${Input["<film"]}</label>
+        <label><input type="checkbox" name="c-audio">${Input["<audio"]}</label>
+        <label><input type="checkbox" name="c-green">${Input["<green"]}</label>
       </label><br>
       <label>Sottocategorie:
         <label><input type="checkbox" name="sc-idk" selected>Non lo so</label>
-        <h6>-- ${Input["#museo"]} --</h6>
+        <h6>-- ${Input["<museo"]} --</h6>
         &Tab;<label><input type="checkbox" name="sc-musonline">Museo online</label>
-        <h6>-- ${Input["#divertimento"]} --</h6>
+        <h6>-- ${Input["<divertimento"]} --</h6>
         &Tab;<label><input type="checkbox" name="sc-gioco">Gioco</label>
         &Tab;<label><input type="checkbox" name="sc-attivita">Attivitá</label>
-        <h6>-- ${Input["#rivista"]} --</h6>
+        <h6>-- ${Input["<rivista"]} --</h6>
         &Tab;<label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
         &Tab;<label><input type="checkbox" name="sc-edu">Educativo</label>
-        <h6>-- ${Input["#libro"]} --</h6>
+        <h6>-- ${Input["<libro"]} --</h6>
         &Tab;<label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
         &Tab;<label><input type="checkbox" name="sc-ebook">E-book</label>
-        <h6>-- ${Input["#film"]} --</h6>
+        <h6>-- ${Input["<film"]} --</h6>
         &Tab;<label><input type="checkbox" name="sc-doc">Documentario</label>
         &Tab;<label><input type="checkbox" name="sc-stream">Film in streaming</label>
-        <h6>-- ${Input["#audio"]} --</h6>
+        <h6>-- ${Input["<audio"]} --</h6>
         &Tab;<label><input type="checkbox" name="sc-musica">Musica</label>
         &Tab;<label><input type="checkbox" name="sc-spartito">Spartito</label>
-        <h6>-- ${Input["#green"]} --</h6>
+        <h6>-- ${Input["<green"]} --</h6>
         &Tab;<label><input type="checkbox" name="sc-green">Materiale</label>
         &Tab;<label><input type="checkbox" name="sc-atgr">Attivitá</label>
         <h6>-- Generale --</h6>

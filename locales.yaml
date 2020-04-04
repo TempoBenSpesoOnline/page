@@ -27,4 +27,132 @@ shared:
     - divertimento
    href: https://www.ludodi.it
    ref: ludodi
-   
+   title: Ludodì
+   desc: Giochi di carte personalizzabili gratis.
+   warn: Usare il codice <kbd>#iorestoacasa</kbd>
+  -
+   cat:
+    - rivista
+   href: ""
+   ref: condenast
+   title: Condè Nast
+   desc: Vanity Fair, Wired, Vogue, GQ, La Cucina Italiana, AD, Traveller gratuiti
+   warn: È necessario scaricare l'app per iOS o Android e usare i seguenti codici per sbloccare le riviste:<a data-toggle='collapse' href='#collapse' role='button' aria-expanded='false' aria-controls='collapse'>Mostra/nascondi codici</a><div class='collapse' id='collapse'><table class='table table-striped table-hover'><thead class='thead-light'><tr><th scope='col'>Codice</th><th scope='col'>Rivista</th></tr></thead><tbody><tr><td><kbd>VF4U</kbd></td><td>Vanity Fair</td></tr><tr><td><kbd>VOGUE4U</kbd></td><td>Vogue</td></tr><tr><td><kbd>WIRED4U</kbd></td><td>Wired</td></tr><tr><td><kbd>GQ4U</kbd></td><td>GQ</td></tr><tr><td><kbd>LCI4U</kbd></td><td>La Cucina Italiana</td></tr><tr><td><kbd>AD4U</kbd></td><td>AD</td></tr><tr><td><kbd>TRAVELLER4U</kbd></td><td>Traveller</td></tr></tbody></table></div>
+  -
+   cat:
+    - rivista
+    - green
+   href: https://www.lanuovaecologia.it/solidarieta-digitale
+   ref: nuovaeco
+   title: La Nuova Ecologia
+  -
+   cat:
+    - rivista
+   href: https://www.elettronicain.it/blog/2020/03/10/ioleggoacasa-il-numero-di-marzo-e-gratis/
+   title: Elettronica In
+  -
+   cat:
+    - libro
+   href: https://www.bookrepublic.it/promozioni/ioleggoacasa-ebook-gratis/
+   ref: bookrep
+   title: Bookrepublic.it
+   desc: E-book gratuiti
+  -
+   cat:
+    - libro
+   href: https://it-it.facebook.com/pg/casasirio/posts
+   ref: csirio
+   title: CasaSirio
+   desc: Versione premium con accesso ad e-book gratuita.
+   warn: È necessario avere un account Facebook e commentare sul post fissato in alto.
+  -
+   cat:
+    - libro
+   href: https://www.cartabianca.com/un-buon-antivirus-libri-gratis/
+   ref: cartabianca
+   title: CartaBianca
+   desc: E-book gratuiti
+   info: <a href='https://cartabianca.com/catalogo'>Catalogo</a>
+  -
+   cat:
+    - libro
+   href: https://www.galluccieditore.com/ebookgratieperlemergenza/
+   ref: gallucci
+   title: Gallucci Editore
+   desc: E-book gratuiti
+  -
+   cat:
+    - libro
+   href: https://www.ilsaggiatore.com/solidarieta/
+   title: Il Saggiatore
+   desc: Ogni due giorni, un e-book gratuito a scelta.
+  -
+   cat:
+    - libro
+   href: https://www.caravaggioeditore.it/categoria-prodotto/solidarieta-digitale/
+   ref: caravaggio
+   title: Caravaggio Editore
+   desc: E-book gratuiti a rotazione.
+  -
+   cat:
+    - libro
+   href: https://www.skylabstudios.it/libreria-gratuita/
+   ref: skylab
+   title: SkyLab
+   desc: Grandi classici in e-book gratuiti.
+  -
+   cat:
+    - libro
+   href: http://neropress.it/iniziativa-letture-in-quarantena/
+   ref: neropress
+   title: Neropress
+   desc: E-book gratuiti.
+  -
+   cat:
+    - film
+    - audio
+   href: https://www.fbk.eu/en/initiative/menoviruspiuconoscenza
+   ref: fbk
+   title: FBK
+   desc: Video, podcast e risorse online gratuite.
+  -
+   cat:
+    - film
+   href: https://www.marechiarofilm.it/it/la-cultura-non-si-ferma/
+   ref: marechiaro
+   title: Marechiaro
+   desc: Film di marechiarofilm in streaming.
+  -
+   cat:
+    - film
+   href: https://infinitytv.it
+   ref: infinity
+   title: Ininity
+   desc: Due mesi di abbonamento ad Infinity gratuito.
+   info: Basta registrarsi per ottenere i due mesi gratuiti.
+  -
+   cat:
+    - audio
+   href: mailto:info@farfallinaedizioni.it
+   ref: farfallina
+   title: FarfallinaEdizioni
+   desc: Canzoni, spartiti, testi e musiche dell'etichetta Farfallina gratuiti.
+   warn: Inviare una richiesta di accedere alla libreria.
+  -
+   cat:
+    - green
+   href: https://iorestoacasa.legambiente.it
+   ref: legambiente
+   title: \#iorestoacasa Legambiente
+   desc: Contenuti con al centro l'ambiente.
+/:
+ title: Tempo Ben Speso Online
+ motto: Dove il divertimento è di casa. Letteralmente.
+ description: Una lista aggiornata (circa) di opportunitá interessanti e gratuite da cogliere in questo periodo.
+<museo: Musei e Arte
+<divertimento: Divertimento e bambini
+<rivista: Riviste, periodici e giornali
+<libro: Libri
+<film: Video, fil, streaming e documentari
+<audio: Audio, musiche, dischi e spartiti
+<green: Futuro, sostenibilità e green
