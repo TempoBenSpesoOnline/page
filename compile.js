@@ -35,12 +35,12 @@ const utils = {
       if (el.cat.indexOf(name) != -1) {elements.push(el)}
     });
     elements.forEach((el, id) => {
-      elements[id] = `<li id="${el.ref}"><a href="${el.href}">${el.title || el.ref}: ${el.desc}</a>${el.warn ? ` <span class="btn btn-outline-warning">${el.warn}</span>` : `` }${el.info ? ` <span class="btn btn-outline-info">${el.info}</span>` : ``}<span class="btn invisible">Se vedi questo, allora probabilmente non riescia vedere neanche il resto del sito.</span></li>`;
+      elements[id] = `<li id="${el.ref}"><a href="${el.href}">${el.title || el.ref}${el.desc ? ": " + el.desc : ""}</a>${el.warn ? ` <span class="btn btn-outline-warning">${el.warn}</span>` : `` }${el.info ? ` <span class="btn btn-outline-info">${el.info}</span>` : ``}<span class="btn invisible">Se vedi questo, allora probabilmente non riescia vedere neanche il resto del sito.</span></li>`;
     });
     elements.forEach((el) => {_tempEl += el + "\n"})
     elements = _tempEl;
     return `  <body>
-    <h1 class="display-1">${Input["#" + name]}</h1>
+    <h1 class="display-1">${Input["<" + name]}</h1>
     <ul>
       ${elements}
     </ul>
