@@ -145,6 +145,50 @@ shared:
    ref: legambiente
    title: \#iorestoacasa Legambiente
    desc: Contenuti con al centro l'ambiente.
+  -
+   cat:
+    - museo
+    - film
+   href: https://youtu.be/F3JDrfGfGUk
+   ref: mostraffaello
+   title: Mostra di Raffaello
+   desc: Una video-visita.
+  -
+   cat:
+    - museo
+   href: https://artsandculture.google.com/project/frida-kahlo
+   ref: facesfrida
+   title: Faces of Frida
+   desc: Uno sguardo più da vicino alle molte facce di Frida Kahlo.
+  -
+   cat:
+    - museo
+    - divertimento
+   href: https://mandala.ildedalo.com/
+   ref: mandala
+   title: Mandala in Libertà
+   desc: Mandala da colorare.
+  -
+   cat:
+    - museo
+   href: https://pinacotecabrera.org/collezioni/collezioni-filtra/
+   ref: brera
+   title: Pinacoteca di Brera
+  -
+   cat:
+    - museo
+   href: https://www.uffizi.it/mostre-virtuali
+   ref: uffizi
+   title: Galleria degli Uffizi
+  -
+   cat:
+    - museo
+   href: http://www.museivaticani.va/content/museivaticani/it/collezioni/catalogo-online.html
+   ref: vaticano
+   title: Musei Vaticani
+  -
+   cat:
+    - museo
 /:
  title: Tempo Ben Speso Online
  motto: Dove il divertimento è di casa. Letteralmente.
