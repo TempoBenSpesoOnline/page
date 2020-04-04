@@ -229,6 +229,54 @@ shared:
    href: https://www.lezionisulsofa.it/
    ref: lezionisofa
    title: Lezioni sul sofà
+  -
+   cat:
+    - divertimento
+   href: https://scienzaexpress.it/2020/03/solidarieta-digitale/
+   ref: scienzaxpr
+   title: Scienza Express
+  -
+   cat:
+    - divertimento
+   href: https://www.lacucinaitaliana.it/news/in-primo-piano/corsi-video-la-cucina-italiana-gratis/
+   ref: cucinaitaliana
+   title: La Cucina Italiana
+   desc: Corsi di cucina gratuiti.
+  -
+   cat:
+    - divertimento
+   href: https://www.muba.it/files/uploads/2020/03/10/guida-galattica-al-corona-virus-a-curious-guide-for-courageous-kids.pdf
+   ref: muba
+   title: Museo Bambini
+   desc: Guida Galattica al Coronavirus
+  -
+   cat:
+    - divertimento
+   href: https://www.facebook.com/tanatarakids/
+   ref: tanatara
+   title: Tan'atara
+   desc: Attivitá per i piú piccoli.
+  -
+   cat:
+    - divertimento
+   href: https://www.bergamoscienza.it/it/sciencecenter/comodamente-scienza/dont-try-this-at-home
+   ref: tryathome
+   title: <del>Don't</del> try this at home
+  -
+   cat:
+    - libri
+   href: https://www.lospaziobianco.it/restiamoacasa-fumetti-gratuiti-online/
+   ref: to-remove-lista-fumetti
+   title: Lista di fumetti gratuiti
+   warn: Temporanea, i fumetti verranno spostati qui a breve.
+  -
+   cat:
+    - film
+    - libro
+   href: https://www.lonelyplanetitalia.it/speciale/viaggiare-in-poltrona
+   ref: lonelyplanet
+   title: Loney Planet
+   desc: Film e libri relativi al viaggio.
 /:
  title: Tempo Ben Speso Online
  motto: Dove il divertimento è di casa. Letteralmente.
