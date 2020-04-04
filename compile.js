@@ -28,6 +28,7 @@ const utils = {
 		<meta property="og:url" content="/">
 		<meta property="og:image" content="/media/logo.png">
 		<meta property="og:image:alt" content="${Input.shared.ogimageAlt}">
+		<meta property="description" content="${Input.shared.ogDescription}">
 		<meta property="keywords" content="covid,coronavirus,tempobenspeso,tempo ben speso,casa,tempobenspesoonline,tempo ben speso online">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" href="/no-big-title.css">
@@ -175,7 +176,7 @@ Output += `  <body>
 					</p>
 				</div>
 				<div class="col-lg-4">
-					<img src="/img/divertimento.png" alt="Divertimento" class="rounded-circle" width=140 height=140>
+					<img src="/img/divertimento.webp" alt="Divertimento" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<divertimento"]}</h2>
 					<p>${Input["<divertimento-desc"] || ""}</p>
 					<p>
@@ -183,7 +184,7 @@ Output += `  <body>
 					</p>
 				</div>
 				<div class="col-lg-4">
-					<img src="/img/rivista.png" alt="Rivista" class="rounded-circle" width=140 height=140>
+					<img src="/img/rivista.webp" alt="Rivista" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<rivista"]}</h2>
 					<p>${Input["<rivista-desc"] || ""}</p>
 					<p>
@@ -191,7 +192,7 @@ Output += `  <body>
 					</p>
 				</div>
 				<div class="col-lg-4">
-					<img src="/img/libro.png" alt="Libro" class="rounded-circle" width=140 height=140>
+					<img src="/img/libro.webp" alt="Libro" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<libro"]}</h2>
 					<p>${Input["<libro-desc"] || ""}</p>
 					<p>
@@ -199,7 +200,7 @@ Output += `  <body>
 					</p>
 				</div>
 				<div class="col-lg-4">
-					<img src="/img/film.png" alt="Film" class="rounded-circle" width=140 height=140>
+					<img src="/img/film.webp" alt="Film" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<film"]}</h2>
 					<p>${Input["<film-desc"] || ""}</p>
 					<p>
@@ -207,7 +208,7 @@ Output += `  <body>
 					</p>
 				</div>
 				<div class="col-lg-4">
-					<img src="/img/audio.png" alt="Audio" class="rounded-circle" width=140 height=140>
+					<img src="/img/audio.webp" alt="Audio" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<audio"]}</h2>
 					<p>${Input["<audio-desc"] || ""}</p>
 					<p>
@@ -216,7 +217,7 @@ Output += `  <body>
 				</div>
 				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
-					<img src="/img/green.png" alt="Green" class="rounded-circle" width=140 height=140>
+					<img src="/img/green.webp" alt="Green" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<green"]}</h2>
 					<p>${Input["<green-desc"] || ""}</p>
 					<p>
