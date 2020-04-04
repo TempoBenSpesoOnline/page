@@ -48,7 +48,7 @@ const utils = {
 							${el.info ? `<div class="alert alert-info">
 								${el.info}
 							</div>` : ''}
-							${el.href ? `<a href="${el.href}">Vai al contenuto »</a>` : ''}
+							${el.href ? `<br><a class="btn btn-outline-secondary" href="${el.href}">Vai al contenuto »</a>` : ''}
 						</p>
 						${el.sc ? `<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
