@@ -163,7 +163,7 @@ Output += `  <body>
 		<h1 class="display-1">${Input["/"].title}</h1>
 		<h2 class="display-2">${Input["/"].motto}</h2>
 		<h3 class="display-3">${Input["/"].description}</h3>
-		<div class="container marketing"
+		<div class="container marketing">
 			<div class="row">
 				<div class="col-lg-4">
 					<img src="/img/museo.png" alt="Museo" class="rounded-circle" width=140 height=140>
