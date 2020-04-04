@@ -200,6 +200,35 @@ shared:
    ref: divisionismo
    title: Enjoy Museum
    desc: Una mostra virtuale sul Divisionismo.
+  -
+   cat:
+    - museo
+    - film
+   href: https://youtu.be/_iX9c7o3zQc
+   ref: hermitage
+   title: Hermitage
+   description: Una video-visita in italiano dell'Hermitage.
+  -
+   cat:
+    - museo
+    - divertimento
+   href: https://www.facebook.com/MNRomano/
+   ref: mnazromano
+   title: Museo Nazionale Romano
+   desc: Cultura e giochi.
+  -
+   cat:
+    - film
+    - museo
+   href: https://www.9minuti.it/barbero-time-tutti-i-video-ordinati/
+   ref: barbero
+   title: 9Minuti
+  -
+   cat:
+    - divertimento
+   href: https://www.lezionisulsofa.it/
+   ref: lezionisofa
+   title: Lezioni sul sofà
 /:
  title: Tempo Ben Speso Online
  motto: Dove il divertimento è di casa. Letteralmente.
