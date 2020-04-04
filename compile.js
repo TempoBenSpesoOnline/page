@@ -100,7 +100,7 @@ const utils = {
 				</ul>
 			</div>
 		</nav>
-		<div class="album py-5 bg-light">
+		<div class="album py-5">
 			<div class=container>
 				<div class=row>
 					${elements}
@@ -161,7 +161,7 @@ Output += `  <body>
 				<div class="col-lg-4">
 					<img src="/img/museo.png" alt="Museo" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<museo"]}</h2>
-					<p>${Input["<museo-desc"]}</p>
+					<p>${Input["<museo-desc"] || ""}</p>
 					<p>
 						<a href="/museo" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
@@ -169,7 +169,7 @@ Output += `  <body>
 				<div class="col-lg-4">
 					<img src="/img/divertimento.png" alt="Divertimento" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<divertimento"]}</h2>
-					<p>${Input["<divertimento-desc"]}</p>
+					<p>${Input["<divertimento-desc"] || ""}</p>
 					<p>
 						<a href="/divertimento" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
@@ -177,7 +177,7 @@ Output += `  <body>
 				<div class="col-lg-4">
 					<img src="/img/rivista.png" alt="Rivista" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<rivista"]}</h2>
-					<p>${Input["<rivista-desc"]}</p>
+					<p>${Input["<rivista-desc"] || ""}</p>
 					<p>
 						<a href="/rivista" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
@@ -185,7 +185,7 @@ Output += `  <body>
 				<div class="col-lg-4">
 					<img src="/img/libro.png" alt="Libro" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<libro"]}</h2>
-					<p>${Input["<libro-desc"]}</p>
+					<p>${Input["<libro-desc"] || ""}</p>
 					<p>
 						<a href="/libro" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
@@ -193,7 +193,7 @@ Output += `  <body>
 				<div class="col-lg-4">
 					<img src="/img/film.png" alt="Film" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<film"]}</h2>
-					<p>${Input["<film-desc"]}</p>
+					<p>${Input["<film-desc"] || ""}</p>
 					<p>
 						<a href="/film" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
@@ -201,16 +201,16 @@ Output += `  <body>
 				<div class="col-lg-4">
 					<img src="/img/audio.png" alt="Audio" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<audio"]}</h2>
-					<p>${Input["<audio-desc"]}</p>
+					<p>${Input["<audio-desc"] || ""}</p>
 					<p>
 						<a href="/audio" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
 				</div>
 				<div class="col-lg-4"></div>
 				<div class="col-lg-4">
-					<img src="/img/green.png" alt="Museo" class="rounded-circle" width=140 height=140>
+					<img src="/img/green.png" alt="Green" class="rounded-circle" width=140 height=140>
 					<h2>${Input["<green"]}</h2>
-					<p>${Input["<green-desc"]}</p>
+					<p>${Input["<green-desc"] || ""}</p>
 					<p>
 						<a href="/green" class="btn btn-secondary" role="button">Vai alla categoria »</a>
 					</p>
@@ -265,7 +265,7 @@ Output2 += `  <body>
 				</ul>
 			</div>
 		</nav>
-		<form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
+		<form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST" style="text-align: center">
 			<label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
 			<label>URL del sito <span class="text-danger">*</span>: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
 			<label>Categorie <span class="text-danger">*</span>: 
@@ -279,27 +279,27 @@ Output2 += `  <body>
 			</label><br>
 			<label>Sottocategorie:
 				<br><label><input type="checkbox" name="sc-idk" selected>Non lo so</label>
-				<h6>-- ${Input["<museo"]} --</h6>
+				<h6>➖ ${Input["<museo"]} ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-musonline">Museo online</label>
-				<h6>-- ${Input["<divertimento"]} --</h6>
+				<h6>➖ ${Input["<divertimento"]} ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-gioco">Gioco</label>
 				&Tab;<label><input type="checkbox" name="sc-attivita">Attivitá</label>
-				<h6>-- ${Input["<rivista"]} --</h6>
+				<h6>➖ ${Input["<rivista"]} ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-tempolibero">Tempo libero</label>
 				&Tab;<label><input type="checkbox" name="sc-edu">Educativo</label>
-				<h6>-- ${Input["<libro"]} --</h6>
+				<h6>➖ ${Input["<libro"]} ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-audiobook">Audiolibro</label>
 				&Tab;<label><input type="checkbox" name="sc-ebook">E-book</label>
-				<h6>-- ${Input["<film"]} --</h6>
+				<h6>➖ ${Input["<film"]} ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-doc">Documentario</label>
 				&Tab;<label><input type="checkbox" name="sc-stream">Film in streaming</label>
-				<h6>-- ${Input["<audio"]} --</h6>
+				<h6>➖ ${Input["<audio"]} ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-musica">Musica</label>
 				&Tab;<label><input type="checkbox" name="sc-spartito">Spartito</label>
-				<h6>-- ${Input["<green"]} --</h6>
+				<h6>➖ ${Input["<green"]} ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-green">Materiale</label>
 				&Tab;<label><input type="checkbox" name="sc-atgr">Attivitá</label>
-				<h6>-- Generale --</h6>
+				<h6>➖ Generale ➖</h6>
 				&Tab;<label><input type="checkbox" name="sc-altro">Altro</label>
 			</label><br>
 			<label>Confermo che che...
