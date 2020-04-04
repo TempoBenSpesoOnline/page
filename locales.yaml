@@ -143,7 +143,7 @@ shared:
     - green
    href: https://iorestoacasa.legambiente.it
    ref: legambiente
-   title: \#iorestoacasa Legambiente
+   title: '#iorestoacasa Legambiente'
    desc: Contenuti con al centro l'ambiente.
   -
    cat:
@@ -191,7 +191,7 @@ shared:
     - museo
    href: https://www.museoscienza.org/it/storieaportechiuse
    ref: storieportechiuse
-   title: \#storieaportechiuse
+   title: '#storieaportechiuse'
    desc: Il Museo Della Scienza ogni giorno con un racconto di qualcosa che normalmente é esposto.
   -
    cat:
