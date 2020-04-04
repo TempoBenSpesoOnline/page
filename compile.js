@@ -23,6 +23,7 @@ const utils = {
     <meta property="og:image:alt" content="${Input.shared.ogimageAlt}">
     <meta property="keywords" content="covid,coronavirus,tempobenspeso,tempo ben speso,casa,tempobenspesoonline,tempo ben speso online">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/no-big-title.css">
     <link rel="shortcut icon" href="/media/logo.png" type="image/png">
   </head>
 `},
@@ -61,8 +62,8 @@ Output += utils.head(); //head
 
 Output += `  <body>
     <h1 class="display-1">${Input["/"].title}</h1>
-    <h1 class="display-2">${Input["/"].motto}</h1>
-    <h1 class="display-3">${Input["/"].description}</h1>
+    <h2 class="display-2">${Input["/"].motto}</h2>
+    <h3 class="display-3">${Input["/"].description}</h3>
     <h2>Categorie:</h2>
     <ul class="w-75 w-sm-50">
       <li class="list-group-item"><a href="/museo">${Input["<museo"]}</a></li>
@@ -128,13 +129,15 @@ Output2 += `  <body>
         <h6>-- Generale --</h6>
         &Tab;<label><input type="checkbox" name="sc-altro">Altro</label>
       </label><br>
-      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="a-verification" required /></label><br>
-      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento non comprende contenuto pornografico, violento o comunque inadatto ai minori. <input type="checkbox" name="a-nsfw" required /></label><br>
-      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é in italiano. <input type="checkbox" name="a-italian" required /></label><br>
-      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é lo stesso che ho descritto. <input type="checkbox" name="a-real" required /></label><br>
-      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é pubblicamente disponibile. <input type="checkbox" name="a-public" required /></label><br>
-      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é accessibile gratuitamente <input type="checkbox" name="a-free" required /></label><br>
-      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il aprire/utilizzare il link del suggerimento non mi porta guadagni o comunque benefici. (questo non include ovviamente i siti di tua proprietá) <input type="checkbox" name="a-nsfw" required /></label><br>
+      <label>Confermo che che...
+        <ul>
+          <li><span class="text-danger">*</span> capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="a-verification" required /></li>
+          <li><span class="text-danger">*</span> il contenuto del mio suggerimento non comprende contenuto pornografico, violento o comunque inadatto ai minori. <input type="checkbox" name="a-nsfw" required /></li>
+          <li><span class="text-danger">*</span> il contenuto del mio suggerimento é in italiano, é gratuito ed é pubblico. <input type="checkbox" name="a-itfreepub" required /></li>
+          <li><span class="text-danger">*</span> il contenuto del mio suggerimento é lo stesso che ho descritto. <input type="checkbox" name="a-real" required /></li>
+          <li><span class="text-danger">*</span> l'aprire/utilizzare il link del suggerimento non mi porta guadagni o comunque benefici. (questo non include ovviamente i siti di tua proprietá) <input type="checkbox" name="a-referral" required /></li>
+        </ul>
+      </label>
       <div data-netlify-recaptcha="true"></div><br>
       <button type="submit" class="btn btn-outline-primary">Vai!</button>
     </form>

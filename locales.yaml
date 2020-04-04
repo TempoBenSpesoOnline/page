@@ -189,6 +189,17 @@ shared:
   -
    cat:
     - museo
+   href: https://www.museoscienza.org/it/storieaportechiuse
+   ref: storieportechiuse
+   title: \#storieaportechiuse
+   desc: Il Museo Della Scienza ogni giorno con un racconto di qualcosa che normalmente é esposto.
+  -
+   cat:
+    - museo
+   href: http://www.enjoymuseum.com/divisionismo/
+   ref: divisionismo
+   title: Enjoy Museum
+   desc: Una mostra virtuale sul Divisionismo.
 /:
  title: Tempo Ben Speso Online
  motto: Dove il divertimento è di casa. Letteralmente.
