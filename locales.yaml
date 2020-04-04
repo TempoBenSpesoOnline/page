@@ -1,0 +1,30 @@
+---
+shared:
+ htmlTitle: " @ TempoBenSpeso.online"
+ ogTitle: Tempo Ben Speso Online
+ ogDescription: Una lista aggiornata (circa) di opportunità interessanti e gratuiti da cogliere in questo periodo
+ ogimageAlt: Logo Tempo Ben Speso Online
+ htmlTitles:
+  museo: Musei
+  divertimento: Divertimento e bambini
+  rivista: Riviste
+  libro: Libri
+  film: Film
+  audio: Audio
+  green: Green
+  form: Suggerisci
+ list:
+  -
+   cat:
+     - museo
+     - film
+   href: https://arte.sky.it
+   ref: skyarte
+   title: Sky Arte
+   desc: Tutti i programmi firmati Sky Arte gratuitmente.
+  -
+   cat:
+    - divertimento
+   href: https://www.ludodi.it
+   ref: ludodi
+   

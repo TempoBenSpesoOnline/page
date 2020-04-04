@@ -1,4 +1,7 @@
-const Input = require("./locales.json"), fs = require("fs");
+const fs = require("fs"), Input = (function() {
+  const yaml = require('js-yaml');
+  return yaml.safeLoad(fs.readFileSync('locales.yaml'));
+})();
 let Output = "", Output2 = "";
 
 const utils = {
@@ -32,7 +35,7 @@ const utils = {
       if (el.cat.indexOf(name) != -1) {elements.push(el)}
     });
     elements.forEach((el, id) => {
-      elements[id] = `<li id="${el.ref}"><a href="${el.href}">${el.text}</a>${el.warn ? ` <span class="btn btn-outline-warning">${el.warn}</span>` : `` }${el.info ? ` <span class="btn btn-outline-info">${el.info}</span>` : ``}<span class="btn invisible">Se vedi questo, allora probabilmente non riescia vedere neanche il resto del sito.</span></li>`;
+      elements[id] = `<li id="${el.ref}"><a href="${el.href}">${el.title}: ${el.desc}</a>${el.warn ? ` <span class="btn btn-outline-warning">${el.warn}</span>` : `` }${el.info ? ` <span class="btn btn-outline-info">${el.info}</span>` : ``}<span class="btn invisible">Se vedi questo, allora probabilmente non riescia vedere neanche il resto del sito.</span></li>`;
     });
     elements.forEach((el) => {_tempEl += el + "\n"})
     elements = _tempEl;
