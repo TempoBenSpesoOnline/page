@@ -18,8 +18,8 @@
     <h1 class="display-1">Aggiungi un elemento</h1>
     <form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
       <label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
-      <label>URL del sito: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
-      <label>Categorie: 
+      <label>URL del sito <span class="text-danger">*</span>: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
+      <label>Categorie <span class="text-danger">*</span>: 
         <label><input type="checkbox" name="c-museo">Musei e Arte</label>
         <label><input type="checkbox" name="c-divertimento">Divertimento e bambini</label>
         <label><input type="checkbox" name="c-rivista">Riviste, periodici e giornali</label>
@@ -53,13 +53,13 @@
         <h6>-- Generale --</h6>
         &Tab;<label><input type="checkbox" name="sc-altro">Altro</label>
       </label><br>
-      <label>Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="a-verification" required /></label><br>
-      <label>Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento non comprende contenuto pornografico, violento o comunque inadatto ai minori. <input type="checkbox" name="a-nsfw" required /></label><br>
-      <label>Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é in italiano. <input type="checkbox" name="a-italian" required /></label><br>
-      <label>Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é lo stesso che ho descritto. <input type="checkbox" name="a-real" required /></label><br>
-      <label>Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é pubblicamente disponibile. <input type="checkbox" name="a-public" required /></label><br>
-      <label>Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é accessibile gratuitamente <input type="checkbox" name="a-free" required /></label><br>
-      <label>Cliccando questa <em>checkbox</em>, confermo che il aprire/utilizzare il link del suggerimento non mi porta guadagni o comunque benefici. (questo non include ovviamente i siti di tua proprietá) <input type="checkbox" name="a-nsfw" required /></label><br>
+      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. <input type="checkbox" name="a-verification" required /></label><br>
+      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento non comprende contenuto pornografico, violento o comunque inadatto ai minori. <input type="checkbox" name="a-nsfw" required /></label><br>
+      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é in italiano. <input type="checkbox" name="a-italian" required /></label><br>
+      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é lo stesso che ho descritto. <input type="checkbox" name="a-real" required /></label><br>
+      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é pubblicamente disponibile. <input type="checkbox" name="a-public" required /></label><br>
+      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il contenuto del suggerimento é accessibile gratuitamente <input type="checkbox" name="a-free" required /></label><br>
+      <label><span class="text-danger">*</span> Cliccando questa <em>checkbox</em>, confermo che il aprire/utilizzare il link del suggerimento non mi porta guadagni o comunque benefici. (questo non include ovviamente i siti di tua proprietá) <input type="checkbox" name="a-nsfw" required /></label><br>
       <div data-netlify-recaptcha="true"></div><br>
       <button type="submit" class="btn btn-outline-primary">Vai!</button>
     </form>
