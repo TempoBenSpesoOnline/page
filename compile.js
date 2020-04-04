@@ -28,7 +28,7 @@ const utils = {
 		<meta property="og:url" content="/">
 		<meta property="og:image" content="/media/logo.png">
 		<meta property="og:image:alt" content="${Input.shared.ogimageAlt}">
-		<meta property="description" content="${Input.shared.ogDescription}">
+		<meta name="description" content="${Input.shared.ogDescription}">
 		<meta property="keywords" content="covid,coronavirus,tempobenspeso,tempo ben speso,casa,tempobenspesoonline,tempo ben speso online">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 		<link rel="stylesheet" href="/no-big-title.css">
