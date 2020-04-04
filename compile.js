@@ -9,10 +9,9 @@ const utils = {
 	 */
 	head: function(pagename) {
 		return `<!DOCTYPE html>
-<html>
+<html lang="it-IT">
 	<head>
 		<title>${pagename || "Home"}${Input.shared.htmlTitle}</title>
-		<base id="base" />
 		<meta name="viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta property="og:title" content="${Input.shared.ogTitle}">
 		<meta property="og:type" content="website">
