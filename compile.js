@@ -3,7 +3,6 @@ const fs = require("fs"), Input = (function() {
 	return yaml.safeLoad(fs.readFileSync('locales.yaml'));
 })();
 let Output = "", Output2 = "";
-
 const utils = {
 	/**
 	 * @param {String} pagename
@@ -35,8 +34,8 @@ const utils = {
 		Input.shared.list.forEach((el) => {
 			if (el.cat.indexOf(name) != -1) {elements.push(el)}
 		});
-		elements.map(el => {
-			return `<div id="${el.ref}" class="col-md-4">
+		elements.forEach((el, id) => {
+			elements[id] = `<div id="${el.ref}" class="col-md-4">
 				<div class="card mb-4 shadow-sm">
 					<img src="${el.img}" alt="${'Image for '+el.title}" class="card-img-top" style="width: 100%; height: 225px">
 					<div class="card-body">
@@ -75,7 +74,6 @@ const utils = {
 			<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<div class="collapse navbar-collapse" id=navbarContent>
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item ${(name == 'museo') ? 'active' : ''}">
@@ -118,18 +116,14 @@ const utils = {
 </html>`
 	}
 }
-
 // Root
-
 Output += utils.head(); //head
-
 Output += `  <body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<a href="/" class="navbar-brand">TempoBenSpeso.online <span class="sr-only">(corrente)</span></a>
 			<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<div class="collapse navbar-collapse" id=navbarContent>
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
@@ -159,7 +153,6 @@ Output += `  <body>
 				</ul>
 			</div>
 		</nav>
-
 		<h1 class="display-1">${Input["/"].title}</h1>
 		<h2 class="display-2">${Input["/"].motto}</h2>
 		<h3 class="display-3">${Input["/"].description}</h3>
@@ -223,7 +216,6 @@ Output += `  <body>
 				</div>
 			</div>
 		</div>
-
 		<br>
 		<!--<footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>-->
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -231,12 +223,10 @@ Output += `  <body>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 	</body>
 </html>`; //body
-
 fs.writeFile("index.html", Output, (err) => {
 	if (err) throw err;
 	console.log("home done");
 });
-
 // submit
 Output2 += utils.head(Input.shared.htmlTitles['form']);
 Output2 += `  <body>
@@ -245,7 +235,6 @@ Output2 += `  <body>
 			<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-
 			<div class="collapse navbar-collapse" id=navbarContent>
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
@@ -275,7 +264,6 @@ Output2 += `  <body>
 				</ul>
 			</div>
 		</nav>
-
 		<form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST">
 			<label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
 			<label>URL del sito <span class="text-danger">*</span>: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
@@ -328,13 +316,11 @@ Output2 += `  <body>
 		<!--<footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>-->
 	</body>
 </html>`
-
 fs.mkdir("new", (err) => {if (err) console.log("Directory exists : new (", ""+err, ")")});
 fs.writeFile("new/index.html", Output2, (err) => {
 	if (err) throw err;
 	console.log("form done");
 });
-
 function child(name) {
 	fs.mkdir(name, (err) => {if (err) console.log("Directory exists :", name, "(", ""+err, ")")});
 	fs.writeFile(name + "/index.html", utils.head(Input.shared.htmlTitles[name]) + utils.body(name), (err) => {
@@ -342,7 +328,6 @@ function child(name) {
 	});
 	console.log(name, "done")
 }
-
 child("museo");
 child("divertimento");
 child("rivista");
