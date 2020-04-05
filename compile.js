@@ -46,7 +46,7 @@ const utils = {
 		elements.forEach((el, id) => {
 			elements[id] = `<div id="${el.ref}" class="col-md-4">
 				<div class="card mb-4 shadow-sm">
-					<img src="${el.img || "https://dummyimage.com/1000x1000/000/fff.png&text=(la+foto+va+qui!)"}" alt="${'Image for '+el.title}" class="card-img-top" style="width: 100%">
+					${el.img ? `<img src="${el.img}" alt="${'Image for '+el.title}" class="card-img-top" style="width: 100%">` : ''}
 					<div class="card-body">
 						<h5 class="card-title">${el.title}</h5>
 						<p class="card-text">
