@@ -43,7 +43,7 @@ const utils = {
 		Input.shared.list.forEach((el) => {
 			if (el.cat.indexOf(name) != -1) {elements.push(el)}
 		});
-		function isImage(el) {try {fs.readFileSync(`files/${el.ref}.webp`); return `<img src="files/${el.ref}.webp" alt="${'Image for '+el.title}" loading=lazy class="card-img-top" style="width: 100%">`}catch(e){return ""}}
+		function isImage(el) {try {fs.readFileSync(`img/${el.ref}.webp`); return `<img src="img/${el.ref}.webp" alt="${'Image for '+el.title}" loading=lazy class="card-img-top" style="width: 100%">`}catch(e){return ""}}
 		elements.forEach((el, id) => {
 			elements[id] = `
 				<div class="card mb-4 shadow-sm" id="${el.ref}">
@@ -53,10 +53,10 @@ const utils = {
 						<p class="card-text">
 							${el.desc || ''}
 							${el.warn ? `<div class="alert alert-warning">
-								${el.warn}
+								<small>${el.warn}</small>
 							</div>` : ''}
 							${el.info ? `<div class="alert alert-info">
-								${el.info}
+								<small>${el.info}</small>
 							</div>` : ''}
 							${el.href ? `<div><a class="btn btn-outline-secondary" href="${el.href}">Vai al contenuto »</a></div>` : ''}
 						</p>
