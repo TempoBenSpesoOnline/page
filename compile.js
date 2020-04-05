@@ -1,14 +1,15 @@
-const fs = require("fs"), Input = (function() {
-	const yaml = require('js-yaml');
-	return yaml.safeLoad(fs.readFileSync('locales.yaml'));
-})();
-let Output = "", Output2 = "";
-const utils = {
-	/**
-	 * @param {String} pagename
-	 */
-	head(pagename) {
-		return `<!DOCTYPE html>
+module.exports = () => {
+	const fs = require("fs"), Input = (function () {
+		const yaml = require('js-yaml');
+		return yaml.safeLoad(fs.readFileSync('locales.yaml'));
+	})();
+	let Output = "", Output2 = "";
+	const utils = {
+		/**
+		 * @param {String} pagename
+		 */
+		head(pagename) {
+			return `<!DOCTYPE html>
 <html lang="it-IT">
 	<head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -35,17 +36,17 @@ const utils = {
 		<link rel="shortcut icon" href="/media/logo.png" type="image/png">
 	</head>
 `},
-/**
- * @param {String} name 
- */
-	body(name) {
-		let elements = [], _tempEl = "";
-		Input.shared.list.forEach((el) => {
-			if (el.cat.indexOf(name) != -1) {elements.push(el)}
-		});
-		function isImage(el) {try {fs.readFileSync(`img/${el.ref}.webp`); return `<img src="img/${el.ref}.webp" alt="${'Image for '+el.title}" loading=lazy class="card-img-top" style="width: 100%">`}catch(e){return ""}}
-		elements.forEach((el, id) => {
-			elements[id] = `
+		/**
+		 * @param {String} name 
+		 */
+		body(name) {
+			let elements = [], _tempEl = "";
+			Input.shared.list.forEach((el) => {
+				if (el.cat.indexOf(name) != -1) { elements.push(el) }
+			});
+			function isImage(el) { try { fs.readFileSync(`img/${el.ref}.webp`); return `<img src="img/${el.ref}.webp" alt="${'Image for ' + el.title}" loading=lazy class="card-img-top" style="width: 100%">` } catch (e) { return "" } }
+			elements.forEach((el, id) => {
+				elements[id] = `
 				<div class="card mb-4 shadow-sm" id="${el.ref}">
 					${isImage(el)}
 					<div class="card-body">
@@ -62,23 +63,23 @@ const utils = {
 						</p>
 						${el.sc ? `<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
-								${(function(){
-									let acc = "";
-									el.scat.forEach(sc => {
-										acc += `<span class="badge badge-secondary">#${sc.toLowerCase()}</span>`
-									});
-									return acc;
-								})()}
+								${(function () {
+							let acc = "";
+							el.scat.forEach(sc => {
+								acc += `<span class="badge badge-secondary">#${sc.toLowerCase()}</span>`
+							});
+							return acc;
+						})()}
 							</div>
 							<small class="text-muted">${el.dateAddded}</small>
 						</div>` : ''}
 					</div>
 				</div>
 			</div>`;
-		});
-		elements.forEach((el) => {_tempEl += el + "\n"})
-		elements = _tempEl;
-		return `  <body>
+			});
+			elements.forEach((el) => { _tempEl += el + "\n" })
+			elements = _tempEl;
+			return `  <body>
 		${this.navbar(name)}
 		<div class="album py-5">
 			<div class=container>
@@ -90,9 +91,9 @@ const utils = {
 		${this.foot()}
 	</body>
 </html>`
-	},
-	navbar(cur = undefined) {
-		return `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		},
+		navbar(cur = undefined) {
+			return `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a href="/" class="navbar-brand">TempoBenSpeso.online</a>
 		<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
 			<span class="navbar-toggler-icon"></span>
@@ -126,20 +127,20 @@ const utils = {
 			</ul>
 		</div>
 	</nav>`
-	},
-	foot() {
-		return `<footer class="footer mt-auto text-center"><div class=container><span class="text-muted">&middot; Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">GitHub</a> &middot; Powered by GitHub & Netlify &middot;</div></footer>
+		},
+		foot() {
+			return `<footer class="footer mt-auto text-center"><div class=container><span class="text-muted">&middot; Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">GitHub</a> &middot; Powered by GitHub & Netlify &middot;</div></footer>
 		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>`
-	},
-	customBody(body, name) {
-		return `<body>${this.navbar(name)}${body}${this.foot()}</body></html>`
+		},
+		customBody(body, name) {
+			return `<body>${this.navbar(name)}${body}${this.foot()}</body></html>`
+		}
 	}
-}
-// Root
-Output += utils.head(); //head
-Output += utils.customBody(`
+	// Root
+	Output += utils.head(); //head
+	Output += utils.customBody(`
 		<h1 class="display-1">${Input["/"].title}</h1>
 		<h2 class="display-2">${Input["/"].motto}</h2>
 		<h3 class="display-3">${Input["/"].description}</h3>
@@ -205,13 +206,13 @@ Output += utils.customBody(`
 			</div>
 		</div>
 		`, undefined); //body
-fs.writeFile("index.html", Output, (err) => {
-	if (err) throw err;
-	console.log("home done");
-});
-// new
-Output2 += utils.head(Input.shared.htmlTitles['form']);
-Output2 += utils.customBody(`
+	fs.writeFile("index.html", Output, (err) => {
+		if (err) throw err;
+		console.log("home done");
+	});
+	// new
+	Output2 += utils.head(Input.shared.htmlTitles['form']);
+	Output2 += utils.customBody(`
 		<form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST" class="ml-2">
 			<label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
 			<label>URL del sito <span class="text-danger">*</span>: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
@@ -261,22 +262,23 @@ Output2 += utils.customBody(`
 			<div data-netlify-recaptcha="true"></div><br>
 			<button type="submit" class="btn btn-outline-primary">Vai!</button>
 		</form>`, 'new');
-fs.mkdir("new", (err) => {if (err) console.log("Directory exists : new (", ""+err, ")")});
-fs.writeFile("new/index.html", Output2, (err) => {
-	if (err) throw err;
-	console.log("form done");
-});
-function child(name) {
-	fs.mkdir(name, (err) => {if (err) console.log("Directory exists :", name, "(", ""+err, ")")});
-	fs.writeFile(name + "/index.html", utils.head(Input.shared.htmlTitles[name]) + utils.body(name), (err) => {
+	fs.mkdir("new", (err) => { if (err) console.log("Directory exists : new (", "" + err, ")") });
+	fs.writeFile("new/index.html", Output2, (err) => {
 		if (err) throw err;
+		console.log("form done");
 	});
-	console.log(name, "done")
+	function child(name) {
+		fs.mkdir(name, (err) => { if (err) console.log("Directory exists :", name, "(", "" + err, ")") });
+		fs.writeFile(name + "/index.html", utils.head(Input.shared.htmlTitles[name]) + utils.body(name), (err) => {
+			if (err) throw err;
+		});
+		console.log(name, "done")
+	}
+	child("museo");
+	child("divertimento");
+	child("rivista");
+	child("libro");
+	child("film");
+	child("audio");
+	child("green");
 }
-child("museo");
-child("divertimento");
-child("rivista");
-child("libro");
-child("film");
-child("audio");
-child("green");
