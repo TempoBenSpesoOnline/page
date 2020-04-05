@@ -7,7 +7,7 @@ const utils = {
 	/**
 	 * @param {String} pagename
 	 */
-	head: function(pagename) {
+	head(pagename) {
 		return `<!DOCTYPE html>
 <html lang="it-IT">
 	<head>
@@ -38,7 +38,7 @@ const utils = {
 /**
  * @param {String} name 
  */
-	body: function(name) {
+	body(name) {
 		let elements = [], _tempEl = "";
 		Input.shared.list.forEach((el) => {
 			if (el.cat.indexOf(name) != -1) {elements.push(el)}
@@ -78,37 +78,7 @@ const utils = {
 		elements.forEach((el) => {_tempEl += el + "\n"})
 		elements = _tempEl;
 		return `  <body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a href="/" class="navbar-brand">TempoBenSpeso.online</a>
-			<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id=navbarContent>
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item ${(name == 'museo') ? 'active' : ''}">
-						<a href="/museo" class="nav-link">${Input['<museo']} ${(name == 'museo') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
-					</li>
-					<li class="nav-item ${(name == 'divertimento') ? 'active' : ''}">
-						<a href="/divertimento" class="nav-link">${Input['<divertimento']} ${(name == 'divertimento') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
-					</li>
-					<li class="nav-item ${(name == 'rivista') ? 'active' : ''}">
-						<a href="/rivista" class="nav-link">${Input['<rivista']} ${(name == 'rivista') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
-					</li>
-					<li class="nav-item ${(name == 'libro') ? 'active' : ''}">
-						<a href="/libro" class="nav-link">${Input['<libro']} ${(name == 'libro') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
-					</li>
-					<li class="nav-item ${(name == 'film') ? 'active' : ''}">
-						<a href="/film" class="nav-link">${Input['<film']} ${(name == 'film') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
-					</li>
-					<li class="nav-item ${(name == 'audio') ? 'active' : ''}">
-						<a href="/audio" class="nav-link">${Input['<audio']} ${(name == 'audio') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
-					</li>
-					<li class="nav-item ${(name == 'green') ? 'active' : ''}">
-						<a href="/green" class="nav-link">${Input['<green']} ${(name == 'green') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+		${this.navbar(name)}
 		<div class="album py-5">
 			<div class=container>
 				<div class=row>
@@ -116,52 +86,59 @@ const utils = {
 				</div>
 			</div>
 		</div>
-		<br>
-		<!--<footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>-->
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		${this.foot()}
 	</body>
 </html>`
+	},
+	navbar(cur = undefined) {
+		return `<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a href="/" class="navbar-brand">TempoBenSpeso.online</a>
+		<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id=navbarContent>
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item ${(cur == 'museo') ? 'active' : ''}">
+					<a href="/museo" class="nav-link">${Input['<museo']} ${(cur == 'museo') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+				<li class="nav-item ${(cur == 'divertimento') ? 'active' : ''}">
+					<a href="/divertimento" class="nav-link">${Input['<divertimento']} ${(cur == 'divertimento') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+				<li class="nav-item ${(cur == 'rivista') ? 'active' : ''}">
+					<a href="/rivista" class="nav-link">${Input['<rivista']} ${(cur == 'rivista') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+				<li class="nav-item ${(cur == 'libro') ? 'active' : ''}">
+					<a href="/libro" class="nav-link">${Input['<libro']} ${(cur == 'libro') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+				<li class="nav-item ${(cur == 'film') ? 'active' : ''}">
+					<a href="/film" class="nav-link">${Input['<film']} ${(cur == 'film') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+				<li class="nav-item ${(cur == 'audio') ? 'active' : ''}">
+					<a href="/audio" class="nav-link">${Input['<audio']} ${(cur == 'audio') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+				<li class="nav-item ${(cur == 'green') ? 'active' : ''}">
+					<a href="/green" class="nav-link">${Input['<green']} ${(cur == 'green') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+				<li class="nav-item ${(cur == 'new') ? 'active' : ''}">
+					<a href="/new" class="nav-link">Suggerisci un elemento ${(cur == 'new') ? '<span class="sr-only">(corrente)</span>' : ''}</a>
+				</li>
+			</ul>
+		</div>
+	</nav>`
+	},
+	foot() {
+		return `<footer class="footer mt-auto py-3"><div class=container><span class="text-muted">&middot; Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">GitHub</a> &middot; Powered by GitHub & Netlify &middot;</div></footer>
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>`
+	},
+	customBody(body, name) {
+		return `<body>${this.navbar(name)}${body}${this.foot()}</body></html>`
 	}
 }
 // Root
 Output += utils.head(); //head
-Output += `  <body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a href="/" class="navbar-brand">TempoBenSpeso.online <span class="sr-only">(corrente)</span></a>
-			<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id=navbarContent>
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a href="/museo" class="nav-link">${Input['<museo']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/divertimento" class="nav-link">${Input['<divertimento']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/rivista" class="nav-link">${Input['<rivista']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/libro" class="nav-link">${Input['<libro']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/film" class="nav-link">${Input['<film']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/audio" class="nav-link">${Input['<audio']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/green" class="nav-link">${Input['<green']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/new" class="nav-link">Suggerisci un elemento</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
+Output += utils.customBody(`
 		<h1 class="display-1">${Input["/"].title}</h1>
 		<h2 class="display-2">${Input["/"].motto}</h2>
 		<h3 class="display-3">${Input["/"].description}</h3>
@@ -226,55 +203,15 @@ Output += `  <body>
 				</div>
 			</div>
 		</div>
-		<br>
-		<!--<footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>-->
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	</body>
-</html>`; //body
+		`, undefined); //body
 fs.writeFile("index.html", Output, (err) => {
 	if (err) throw err;
 	console.log("home done");
 });
 // submit
 Output2 += utils.head(Input.shared.htmlTitles['form']);
-Output2 += `  <body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a href="/" class="navbar-brand">TempoBenSpeso.online <span class="sr-only">(corrente)</span></a>
-			<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id=navbarContent>
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a href="/museo" class="nav-link">${Input['<museo']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/divertimento" class="nav-link">${Input['<divertimento']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/rivista" class="nav-link">${Input['<rivista']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/libro" class="nav-link">${Input['<libro']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/film" class="nav-link">${Input['<film']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/audio" class="nav-link">${Input['<audio']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/green" class="nav-link">${Input['<green']}</a>
-					</li>
-					<li class="nav-item">
-						<a href="/new" class="nav-link">Suggerisci un elemento</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST" style="text-align: center">
+Output2 += utils.customBody(`
+		<form data-netlify="true" name="submission" data-netlify-recaptcha="true" method="POST" class="ml-2">
 			<label>Nome del sito: <input type="text" name="nome" placeholder="ABC def"></label><br>
 			<label>URL del sito <span class="text-danger">*</span>: <input type="website" name="url" placeholder="abcdef.it/ciao" required></label><br>
 			<label>Categorie <span class="text-danger">*</span>: 
@@ -322,10 +259,7 @@ Output2 += `  <body>
 			</label>
 			<div data-netlify-recaptcha="true"></div><br>
 			<button type="submit" class="btn btn-outline-primary">Vai!</button>
-		</form>
-		<!--<footer style='background-color: white; position: fixed; bottom: 0'>Realizzato da <a href="https://rubenverg.com">Ruben</a> &middot; <a href="https://github.com/tempobenspesoonline">Organizzazione</a> &middot; Powered by GitHub & Netlify &middot; <a href="/fonti">Fonti</a></footer>-->
-	</body>
-</html>`
+		</form>`, 'new');
 fs.mkdir("new", (err) => {if (err) console.log("Directory exists : new (", ""+err, ")")});
 fs.writeFile("new/index.html", Output2, (err) => {
 	if (err) throw err;
