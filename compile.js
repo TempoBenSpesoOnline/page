@@ -128,7 +128,7 @@ const utils = {
 // Root
 Output += utils.head(); //head
 Output += `  <body>
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<a href="/" class="navbar-brand">TempoBenSpeso.online <span class="sr-only">(corrente)</span></a>
 			<button class="navbar-toggler" type=button data-toggle=collapse data-target=#navbarContent aria-controls=navbarContent aria-expanded=false aria-label="Toggle navbar">
 				<span class="navbar-toggler-icon"></span>
