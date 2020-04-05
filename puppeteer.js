@@ -1,12 +1,11 @@
-module.exports = () => {
-	const gulp = require('gulp');
-	const webp = require('gulp-webp');
-	const fs = require('fs');
-	const input = (() => { let yaml = require('js-yaml'); return yaml.safeLoad(fs.readFileSync('locales.yaml')) })();
-	const sleep = require('atomic-sleep');
-	const pptr = require('puppeteer');
+const gulp = require('gulp');
+const webp = require('gulp-webp');
+const fs = require('fs');
+const input = (() => { let yaml = require('js-yaml'); return yaml.safeLoad(fs.readFileSync('locales.yaml')) })();
+const sleep = require('atomic-sleep');
+const pptr = require('puppeteer');
 
-	(async () => {
+module.exports = async () => {
 		try {
 			const chrome = await pptr.launch();
 			const page = await chrome.newPage();
@@ -32,5 +31,4 @@ module.exports = () => {
 		} catch (e) {
 			console.error(e);
 		}
-	})();
-}
+	};
