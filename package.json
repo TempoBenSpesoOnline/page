@@ -1,14 +1,17 @@
 {
-  "name": "compilation",
-  "description": "Compiles the site.",
-  "authors": "rubenverg",
-  "version": "1.0.0",
-  "main": "compile.js",
-  "dependencies": {
-    "js-yaml": "3.13.1",
-    "puppeteer": "2.1.1",
-    "gulp": "4.0.2",
-    "gulp-webp": "4.0.1",
-    "atomic-sleep": "1.0.0"
-  }
+	"name": "compilation",
+	"description": "Compiles the site.",
+	"authors": "rubenverg",
+	"version": "1.0.0",
+	"dependencies": {
+		"js-yaml": "3.13.1",
+		"puppeteer": "2.1.1",
+		"gulp": "4.0.2",
+		"gulp-webp": "4.0.1",
+		"atomic-sleep": "1.0.0"
+	},
+	"scripts": {
+		"build": "node compile.js",
+		"images": "node puppeteer.js"
+	}
 }

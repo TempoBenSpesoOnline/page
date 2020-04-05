@@ -1,7 +1,5 @@
-const rqr = require('requireg')
-
-const fs = rqr("fs"), Input = (function() {
-	const yaml = rqr('js-yaml');
+const fs = require("fs"), Input = (function() {
+	const yaml = require('js-yaml');
 	return yaml.safeLoad(fs.readFileSync('locales.yaml'));
 })();
 let Output = "", Output2 = "";

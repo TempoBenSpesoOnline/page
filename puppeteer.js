@@ -1,11 +1,9 @@
-const rqr = require('requireg')
-
-const pptr = rqr('puppeteer');
-const gulp = rqr('gulp');
-const webp = rqr('gulp-webp');
-const fs = rqr('fs');
-const input = (() => { let yaml = rqr('js-yaml'); return yaml.safeLoad(fs.readFileSync('locales.yaml')) })();
-const sleep = rqr('atomic-sleep');
+const pptr = require('puppeteer');
+const gulp = require('gulp');
+const webp = require('gulp-webp');
+const fs = require('fs');
+const input = (() => { let yaml = require('js-yaml'); return yaml.safeLoad(fs.readFileSync('locales.yaml')) })();
+const sleep = require('atomic-sleep');
 
 (async () => {
 	try {
