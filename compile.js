@@ -39,13 +39,33 @@ const utils = {
  * @param {String} name 
  */
 	body(name) {
-		let elements = [], _tempEl = "";
+		let elements = [], _tempRes = "", _tempTriEl = [];
 		Input.shared.list.forEach((el) => {
 			if (el.cat.indexOf(name) != -1) {elements.push(el)}
 		});
+		let lengths = [];
+		switch (elements.length % 3) {
+			case 0:
+				lengths[0] = elements.length / 3;
+				lengths[1] = elements.length / 3;
+				lengths[2] = elements.length / 3;
+				break;
+			case 1:
+				lengths[0] = Math.floor(elements.length / 3);
+				lengths[2] = Math.floor(elements.length / 3);
+				lengths[1] = Math.ceil(elements.length / 3);
+				break;
+			case 2:
+				lengths[0] = Math.ceil(elements.length / 3);
+				lengths[1] = Math.ceil(elements.length / 3);
+				lengths[2] = Math.floor(elements.length / 3);
+				break;
+			default:
+				throw new Error(`some wrong division happened: ${elements.length} % 3 = ${elements.length % 3}???`);
+		};
 		elements.forEach((el, id) => {
-			elements[id] = `<div id="${el.ref}" class="col-md-4">
-				<div class="card mb-4 shadow-sm">
+			elements[id] = `
+				<div class="card mb-4 shadow-sm" id="${el.ref}">
 					${el.img ? `<img src="${el.img}" alt="${'Image for '+el.title}" class="card-img-top" style="width: 100%">` : ''}
 					<div class="card-body">
 						<h5 class="card-title">${el.title}</h5>
@@ -72,11 +92,31 @@ const utils = {
 							<small class="text-muted">${el.dateAddded}</small>
 						</div>` : ''}
 					</div>
-				</div>
-			</div>`;
+				</div>`;
 		});
-		elements.forEach((el) => {_tempEl += el + "\n"})
-		elements = _tempEl;
+		_tempTriEl[0] = elements.slice(0, lengths[0]);
+		_tempTriEl[1] = elements.splice(lengths[0], lengths[1]);
+		_tempTriEl[2] = elements.splice(lengths[1], lengths[2]);
+		elements = _tempTriEl;
+		_tempTriEl = `<div class="col-md-4">`;
+		elements[0].forEach(el => {
+			_tempTriEl += el;
+		});
+		_tempTriEl += `</div>`;
+		_tempRes += _tempTriEl;
+		_tempTriEl = `<div class="col-md-4">`;
+		elements[1].forEach(el => {
+			_tempTriEl += el;
+		});
+		_tempTriEl += `</div>`;
+		_tempRes += _tempTriEl;
+		_tempTriEl = `<div class="col-md-4">`;
+		elements[2].forEach(el => {
+			_tempTriEl += el;
+		});
+		_tempTriEl += `</div>`;
+		_tempRes += _tempTriEl;
+		elements = _tempRes;
 		return `  <body>
 		${this.navbar(name)}
 		<div class="album py-5">

@@ -37,7 +37,7 @@ shared:
    ref: condenast
    title: Condè Nast
    desc: Vanity Fair, Wired, Vogue, GQ, La Cucina Italiana, AD, Traveller gratuiti
-   warn: È necessario scaricare l'app per iOS o Android e usare i seguenti codici per sbloccare le riviste:<a data-toggle='collapse' href='#collapse' role='button' aria-expanded='false' aria-controls='collapse'>Mostra/nascondi codici</a><div class='collapse' id='collapse'><table class='table table-striped table-hover'><thead class='thead-light'><tr><th scope='col'>Codice</th><th scope='col'>Rivista</th></tr></thead><tbody><tr><td><kbd>VF4U</kbd></td><td>Vanity Fair</td></tr><tr><td><kbd>VOGUE4U</kbd></td><td>Vogue</td></tr><tr><td><kbd>WIRED4U</kbd></td><td>Wired</td></tr><tr><td><kbd>GQ4U</kbd></td><td>GQ</td></tr><tr><td><kbd>LCI4U</kbd></td><td>La Cucina Italiana</td></tr><tr><td><kbd>AD4U</kbd></td><td>AD</td></tr><tr><td><kbd>TRAVELLER4U</kbd></td><td>Traveller</td></tr></tbody></table></div>
+   warn: È necessario scaricare l'app per iOS o Android e usare i seguenti codici per sbloccare le riviste:<table class='table table-striped table-hover'><thead class='thead-light'><tr><th scope='col'>Codice</th><th scope='col'>Rivista</th></tr></thead><tbody><tr><td><kbd>VF4U</kbd></td><td>Vanity Fair</td></tr><tr><td><kbd>VOGUE4U</kbd></td><td>Vogue</td></tr><tr><td><kbd>WIRED4U</kbd></td><td>Wired</td></tr><tr><td><kbd>GQ4U</kbd></td><td>GQ</td></tr><tr><td><kbd>LCI4U</kbd></td><td>La Cucina Italiana</td></tr><tr><td><kbd>AD4U</kbd></td><td>AD</td></tr><tr><td><kbd>TRAVELLER4U</kbd></td><td>Traveller</td></tr></tbody></table>
   -
    cat:
     - rivista
