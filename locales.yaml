@@ -270,6 +270,36 @@ shared:
    ref: lonelyplanet
    title: Loney Planet
    desc: Film e libri relativi al viaggio.
+  -
+   cat:
+    - libro
+    - audio
+   href: https://www.audible.it/ep/a-casa-con-audible
+   ref: audible
+   title: Audible
+   desc: Audiolibri gratuiti.
+  -
+   cat:
+    - libro
+    - divertimento
+   href: https://www.cnr.it/it/comics-and-science
+   ref: cnr
+   title: Comics &amp; Science
+   desc: Fumetti scientifici gratuiti
+  -
+   cat:
+    - museo
+    - film
+   href: https://www.elfo.org/eventi/20192020/iclassicidellelfoonline.html
+   ref: elfo
+   title: Teatro Elfo Puccini
+   desc: Classici teatrali in video
+  -
+   cat:
+    - film
+   href: https://www.cinetecamilano.it/news/come-accedere-allo-streaming-della-cineteca-di-milano
+   ref: cinemilano
+   title: Cineteca Milano
 /:
  title: Tempo Ben Speso Online
  motto: Dove il divertimento è di casa. Letteralmente.
