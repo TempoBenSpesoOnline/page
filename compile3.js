@@ -434,5 +434,3 @@ module.exports = () => {
 		return result;
 	}
 }
-
-module.exports()
