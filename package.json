@@ -13,7 +13,7 @@
 		"puppeteer": "^2.1.1"
 	},
 	"scripts": {
-		"build": "node full.js",
+		"build": "node full3.js",
 		"comp3": "node compile3.js"
 	}
 }
