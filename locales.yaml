@@ -12,7 +12,7 @@ shared:
   film: Film
   audio: Audio
   green: Green
-  form: Suggerisci
+  new: Suggerisci
  list:
   -
    cat:
@@ -281,10 +281,20 @@ shared:
  title: Tempo Ben Speso Online
  motto: Dove il divertimento è di casa. Letteralmente.
  description: Una lista aggiornata (circa) di opportunitá interessanti e gratuite da cogliere in questo periodo.
-<museo: Musei e Arte
-<divertimento: Divertimento e bambini
-<rivista: Riviste, periodici e giornali
-<libro: Libri
-<film: Video, film, streaming e documentari
-<audio: Audio, musiche, dischi e spartiti
-<green: Futuro, sostenibilità e green
+names:
+ museo: Musei e Arte
+ divertimento: Divertimento e bambini
+ rivista: Riviste, periodici e giornali
+ libro: Libri
+ film: Video, film, streaming e documentari
+ audio: Audio, musiche, dischi e spartiti
+ green: Futuro, sostenibilità e green
+ new: Suggerisci un elemento
+descs:
+ museo: Tutto ció che riguarda arte, musei, visite, disegni e simili.
+ divertimento: Tempo libero e tutto ció che riguarda i bambini.
+ rivista: Abbonamenti e numeri gratuiti.
+ libro: E-book, audio-libri e fumetti.
+ film: Serie, spezzoni di film, film interi, teatro...
+ audio: Tutto ció che é inerente all'ascolto.
+ green: Per un mondo migliore, anche in questo periodo.

@@ -2,15 +2,18 @@
 	"name": "compilation",
 	"description": "Compiles the site.",
 	"authors": "rubenverg",
-	"version": "2.2.3",
+	"version": "3.0.12",
 	"dependencies": {
 		"atomic-sleep": "^1.0.0",
+		"colors": "^1.4.0",
+		"conslog": "^1.1.1",
 		"gulp": "^4.0.2",
 		"gulp-webp": "^4.0.1",
 		"js-yaml": "^3.13.1",
 		"puppeteer": "^2.1.1"
 	},
 	"scripts": {
-		"build": "node full.js"
+		"build": "node full.js",
+		"comp3": "node compile3.js"
 	}
 }

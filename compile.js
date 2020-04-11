@@ -40,10 +40,11 @@ module.exports = () => {
 		 * @param {String} name 
 		 */
 		body(name) {
-			let elements = [], _tempEl = "";
+			let elements = [], _tempEl = "", _tempTriEl = [];
 			Input.shared.list.forEach((el) => {
 				if (el.cat.indexOf(name) != -1) { elements.push(el) }
 			});
+			let el3 = elements.length % 3, ed3 = elements.length / 3; _tempTE = [];
 			function isImage(el) { try { fs.readFileSync(`img/${el.ref}.webp`); return `<img src="img/${el.ref}.webp" alt="${'Image for ' + el.title}" loading=lazy class="card-img-top" style="width: 100%">` } catch (e) { return "" } }
 			elements.forEach((el, id) => {
 				elements[id] = `
@@ -74,10 +75,31 @@ module.exports = () => {
 							<small class="text-muted">${el.dateAddded}</small>
 						</div>` : ''}
 					</div>
-				</div>
-			</div>`;
+				</div>`;
 			});
-			elements.forEach((el) => { _tempEl += el + "\n" })
+			switch (el3) {
+				case 0:
+					_tempTriEl[0] = ed3;
+					_tempTriEl[1] = ed3;
+					_tempTriEl[2] = ed3;
+					break;
+				case 1:
+					_tempTriEl[0] = Math.floor(ed3);
+					_tempTriEl[1] = Math.ceil(ed3);
+					_tempTriEl[2] = Math.floor(ed3);
+					break;
+				case 2:
+					_tempTriEl[0] = Math.ceil(ed3);
+					_tempTriEl[1] = Math.ceil(ed3);
+					_tempTriEl[2] = Math.floor(ed3);
+			};
+			_tempTE[0] = elements.slice(0, _tempTriEl[0]);
+			_tempTE[1] = elements.slice(_tempTriEl[0], _tempTriEl[1]);
+			_tempTE[2] = elements.slice(_tempTriEl[1], _tempTriEl[2]);
+			_tempTriEl.forEach((el, i) => {_tempTriEl[i] = `			<div class="col-lg-4">`});
+			_tempTriEl.forEach((el, i) => {let acc = el; _tempTE.forEach((el) => {acc += el}); _tempTriEl[i] = acc;});
+			_tempTriEl.forEach((el, i) => {_tempTriEl[i] = el + "			</div>"});
+			_tempTriEl.forEach((el) => {_tempEl += el + "\n" });
 			elements = _tempEl;
 			return `  <body>
 		${this.navbar(name)}
@@ -282,3 +304,5 @@ module.exports = () => {
 	child("audio");
 	child("green");
 }
+
+module.exports()
