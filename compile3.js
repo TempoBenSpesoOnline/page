@@ -175,7 +175,7 @@ module.exports = () => {
 			names.audio,
 			names.green,
 		),
-		mods.foot,
+		mods.formScript,
 	);
 
 	console.info("Finished writing new.");

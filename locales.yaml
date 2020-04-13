@@ -2,7 +2,7 @@
 shared:
  htmlTitle: " @ TempoBenSpeso.online"
  ogTitle: Tempo Ben Speso Online
- ogDescription: Una lista aggiornata (circa) di opportunità interessanti e gratuiti da cogliere in questo periodo
+ ogDescription: Una lista aggiornata (circa) di opportunità interessanti e gratuite da cogliere in questo periodo
  ogimageAlt: Logo Tempo Ben Speso Online
  htmlTitles:
   museo: Musei
@@ -120,7 +120,7 @@ shared:
     - film
    href: https://infinitytv.it
    ref: infinity
-   title: Ininity
+   title: Infinity
    desc: Due mesi di abbonamento ad Infinity gratuito.
    info: Basta registrarsi per ottenere i due mesi gratuiti.
   -

@@ -165,52 +165,266 @@ root: |
     </div>
   </div>
 new: |
-  <form data-netlify='true' name='submission' data-netlify-recaptcha='true' method='POST' class='ml-2'>
-    <label>Nome del sito&colon; <input type='text' name='nome' placeholder='ABC def'></label><br>
-    <label>URL del sito <span class='text-danger'>*</span>&colon; <input type='website' name='url' placeholder='abcdef.it/ciao' required></label><br>
-    <label>Categorie <span class='text-danger'>*</span>&colon; 
-      <label><input type='checkbox' name='c-museo'>$</label>
-      <label><input type='checkbox' name='c-divertimento'>$</label>
-      <label><input type='checkbox' name='c-rivista'>$</label>
-      <label><input type='checkbox' name='c-libro'>$</label>
-      <label><input type='checkbox' name='c-film'>$</label>
-      <label><input type='checkbox' name='c-audio'>$</label>
-      <label><input type='checkbox' name='c-green'>$</label>
-    </label><br>
-    <label>Sottocategorie&colon;
-      <br><label><input type='checkbox' name='sc-idk' selected>Non lo so</label>
-      <h6>➖ $ ➖</h6>
-      <label><input type='checkbox' name='sc-musonline'>Museo online</label>
-      <h6>➖ $ ➖</h6>
-      <label><input type='checkbox' name='sc-gioco'>Gioco</label>
-      <label><input type='checkbox' name='sc-attivita'>Attivitá</label>
-      <h6>➖ $ ➖</h6>
-      <label><input type='checkbox' name='sc-tempolibero'>Tempo libero</label>
-      <label><input type='checkbox' name='sc-edu'>Educativo</label>
-      <h6>➖ $ ➖</h6>
-      <label><input type='checkbox' name='sc-audiobook'>Audiolibro</label>
-      <label><input type='checkbox' name='sc-ebook'>E-book</label>
-      <h6>➖ $ ➖</h6>
-      <label><input type='checkbox' name='sc-doc'>Documentario</label>
-      <label><input type='checkbox' name='sc-stream'>Film in streaming</label>
-      <h6>➖ $ ➖</h6>
-      <label><input type='checkbox' name='sc-musica'>Musica</label>
-      <label><input type='checkbox' name='sc-spartito'>Spartito</label>
-      <h6>➖ $ ➖</h6>
-      <label><input type='checkbox' name='sc-green'>Materiale</label>
-      <label><input type='checkbox' name='sc-atgr'>Attivitá</label>
-      <h6>➖ Generale ➖</h6>
-      <label><input type='checkbox' name='sc-altro'>Altro</label>
-    </label><br>
-    <label>Confermo che...
-      <ul class='list-unstyled'>
-        <li><input type='checkbox' name='a-verification' required /> <span class='text-danger'>*</span> capisco che il mio suggerimento non appare immediatamente ma verrá passato da una verifica. </li>
-        <li><input type='checkbox' name='a-nsfw' required /> <span class='text-danger'>*</span> il contenuto del mio suggerimento non comprende contenuto pornografico, violento o comunque inadatto ai minori. </li>
-        <li><input type='checkbox' name='a-itfreepub' required /> <span class='text-danger'>*</span> il contenuto del mio suggerimento é in italiano, é gratuito ed é pubblico. </li>
-        <li><input type='checkbox' name='a-real' required /> <span class='text-danger'>*</span> il contenuto del mio suggerimento é lo stesso che ho descritto. </li>
-        <li><input type='checkbox' name='a-referral' required /> <span class='text-danger'>*</span> l'aprire/utilizzare il link del suggerimento non mi porta guadagni o comunque benefici. (questo non include ovviamente i siti di tua proprietá) </li>
-      </ul>
-    </label>
-    <div data-netlify-recaptcha='true'></div><br>
-    <button type='submit' class='btn btn-outline-primary'>Vai!</button>
-  </form>
+      <div class='alert alert-secondary'>
+        Il tuo suggerimento non verrá immediatamente pubblicato, ma verrá controllato e passato in una selezione.
+      </div>
+      <form novalidate data-netlify='true' name='submission' data-netlify-recaptcha='true' method='POST' class='ml-2 needs-validation'>
+        <div class='form-group'>
+          <label for=nome>Nome del sito</label>
+          <input class='form-control' type='text' name='nome' id='nome' placeholder='nome'>
+          <label for=url class=r>URL del sito</label>
+          <input class='form-control' type='website' name='url' id='url' placeholder='https://example.com' onfocus="unfocusURL()">
+          <div class='invalid-feedback'>É necessario inserire un URL valido.</div>
+        </div>
+        <h5>Categorie <span class='text-danger'>*</span></h5>
+        <div class='custom-control custom-checkbox'>
+          <input onfocus='unfocusCA()' id='cmuseo' class='custom-control-input' data-def='cat' type='checkbox' name='c-museo'>
+          <label onfocus='unfocusCA()' for=cmuseo class='custom-control-label'>$</label><br>
+        </div>
+        <div class='custom-control custom-checkbox'>
+          <input onfocus='unfocusCA()' id='cdivertimento' class='custom-control-input' data-def='cat' type='checkbox' name='c-divertimento'>
+          <label onfocus='unfocusCA()' for=cdivertimento class='custom-control-label'>$</label><br>
+        </div>
+        <div class='custom-control custom-checkbox'>
+          <input onfocus='unfocusCA()' id='crivista' class='custom-control-input' data-def='cat' type='checkbox' name='c-rivista'>
+          <label onfocus='unfocusCA()' for=crivista class='custom-control-label'>$</label><br>
+        </div>
+        <div class='custom-control custom-checkbox'>
+          <input onfocus='unfocusCA()' id='clibro' class='custom-control-input' data-def='cat' type='checkbox' name='c-libro'>
+          <label onfocus='unfocusCA()' for=clibro class='custom-control-label'>$</label><br>
+        </div>
+        <div class='custom-control custom-checkbox'>
+          <input onfocus='unfocusCA()' id='cfilm' class='custom-control-input' data-def='cat' type='checkbox' name='c-film'>
+          <label onfocus='unfocusCA()' for=cfilm class='custom-control-label'>$</label><br>
+        </div>
+        <div class='custom-control custom-checkbox'>
+          <input onfocus='unfocusCA()' id='caudio' class='custom-control-input' data-def='cat' type='checkbox' name='c-audio'>
+          <label onfocus='unfocusCA()' for=caudio class='custom-control-label'>$</label><br>
+        </div>
+        <div class='custom-control custom-checkbox'>
+          <input onfocus='unfocusCA()' id='cgreen' class='custom-control-input' data-def='cat' type='checkbox' name='c-green'>
+          <label onfocus='unfocusCA()' for=cgreen class='custom-control-label'>$</label><br>
+          <div class='invalid-feedback' >Selezionare almeno una categoria.</div>
+        </div>
+        <h5>Sottocategorie</h5>
+        <div class='btn-group-toggle' data-toggle='buttons'>
+          <label class='btn btn-outline-secondary'>
+            <input id='scidk' type='checkbox' name='sc-idk'>Non lo so
+          </label>
+          <label class='btn btn-outline-secondary'>
+            <input id='altro' type='checkbox' name='sc-altro'>Altro
+          </label>
+          <h6>$</h6>
+          <label class='btn btn-outline-secondary'>
+            <input id='scmusonline' type='checkbox' name='sc-musonline'>Museo online
+          </label>
+          <h6>$</h6>
+          <label class='btn btn-outline-secondary'>
+            <input id='scgioco' type='checkbox' name='sc-gioco'>Gioco
+          </label>
+          <label class='btn btn-outline-secondary'>
+            <input id='scattivita' type='checkbox' name='sc-attivita'>Attivitá
+          </label>
+          <h6>$</h6>
+          <label class='btn btn-outline-secondary'>
+            <input id='sctempolibero' type='checkbox' name='sc-tempolibero'>Tempo libero
+          </label>
+          <label class='btn btn-outline-secondary'>
+            <input id='scedu' type='checkbox' name='sc-edu'>Educativo
+          </label>
+          <h6>$</h6>
+          <label class='btn btn-outline-secondary'>
+            <input id='scaudiobook' type='checkbox' name='sc-audiobook'>Audiolibro
+          </label>
+          <label class='btn btn-outline-secondary'>
+            <input id='scebook' type='checkbox' name='sc-ebook'>E-book
+          </label>
+          <h6>$</h6>
+          <label class='btn btn-outline-secondary'>
+            <input id='scdoc' type='checkbox' name='sc-doc'>Documentario
+          </label>
+          <label class='btn btn-outline-secondary'>
+            <input id='scstream' type='checkbox' name='sc-stream'>Film in streaming
+          </label>
+          <h6>$</h6>
+          <label class='btn btn-outline-secondary'>
+            <input id='scmusica' type='checkbox' name='sc-musica'>Musica
+          </label>
+          <label class='btn btn-outline-secondary'>
+            <input id='scspartito' type='checkbox' name='sc-spartito'>Spartito
+          </label>
+          <h6>$</h6>
+          <label class='btn btn-outline-secondary'>
+            <input id='scgreen' type='checkbox' name='sc-green'>Materiale
+          </label>
+          <label class='btn btn-outline-secondary'>
+            <input id='scatgr' type='checkbox' name='sc-atgr'>Attivitá
+          </label>
+        </div>
+        <div class="custom-control custom-checkbox">
+          <input class='custom-control-input' type=checkbox name='confirm' id='agree' onfocus="unfocusC()"/>
+          <label for=agree class=custom-control-label onfocus="unfocusC()">Confermo che...<ol>
+            <li>il contenuto del mio suggerimento non comprende contenuto pornografico, violento o comunque inadatto ai minori. </li>
+            <li>il contenuto del mio suggerimento é in italiano, é gratuito ed é pubblico. </li>
+            <li>il contenuto del mio suggerimento é lo stesso che ho descritto. </li>
+            <li>l'aprire/utilizzare il link del suggerimento non mi porta guadagni o comunque benefici. (questo non include ovviamente i siti di tua proprietá) </li>
+          </ol></label>
+          <div class=invalid-feedback>É necessario accettare.</div>
+        </div>
+        <div data-netlify-recaptcha='true'></div><br>
+        <button type='button' class='btn btn-outline-primary' onclick="spin()">
+        <span class="spinner-border spinner-border-sm" role="status" style="display: none" aria-hidden="true" id="spin"></span>
+        Vai!
+        </button>
+      </form>
+
+formScript: |
+  <footer class='footer mt-auto text-center'><div class=container><span class='text-muted'>&middot; Realizzato da <a href='https://rubenverg.com'>Ruben</a> &middot; <a href='https://github.com/tempobenspesoonline'>GitHub</a> &middot; Powered by GitHub & Netlify &middot;</div></footer>
+  <script src='https://code.jquery.com/jquery-3.4.1.slim.min.js' integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n' crossorigin='anonymous'></script>
+  <script src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin='anonymous'></script>
+  <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js' integrity='sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6' crossorigin='anonymous'></script>
+  <script>
+    function unfocusURL() {
+      $('#url').removeClass('is-invalid')
+    }
+    function unfocusC() {
+      $('#agree').removeClass('is-invalid')
+    }
+    function unfocusCA() {
+      $('[data-def="cat"]').each(function() {$(this).removeClass('is-invalid')});
+    }
+    // Warn if overriding existing method
+    if(Array.prototype.equals)
+        console.warn("Overriding existing Array.prototype.equals. Possible causes:New API defines the method, there's a framework conflict or you've got double inclusions in your code.");
+    // attach the .equals method to Array's prototype to call it on any array
+    Array.prototype.equals = function (array) {
+        // if the other array is a falsy value, return
+        if (!array)
+            return false;
+
+        // compare lengths - can save a lot of time 
+        if (this.length != array.length)
+            return false;
+
+        for (var i = 0, l=this.length; i < l; i++) {
+            // Check if we have nested arrays
+            if (this[i] instanceof Array && array[i] instanceof Array) {
+                // recurse into the nested arrays
+                if (!this[i].equals(array[i]))
+                    return false;       
+            }           
+            else if (this[i] != array[i]) { 
+                // Warning - two different object instances will never be equal:{x:20} != {x:20}
+                return false;   
+            }           
+        }       
+        return true;
+    }
+    // Hide method from for-in loops
+    Object.defineProperty(Array.prototype, "equals", {enumerable:false});
+
+    function getRandomInt(max) {
+      return Math.floor(Math.random() * Math.floor(max));
+    }
+
+    function spin() {
+      $('#spin')[0].style.display = 'inline-block';
+      window.setTimeout(() => {$('#spin')[0].style.display = 'none'; submit();}, (getRandomInt(3) + 1) * 1000)
+    }
+
+    function submit() {
+      let matched = 0;
+      const toMatch = 5;
+      let problematic = []
+
+      // URL is filled, ID: 0
+      if ($('#url')[0].value.trim() !== '') {
+        matched++;
+      } else {
+        problematic.push(0);
+      }
+
+      // URL is spaceless, ID: 1
+      if ($('#url')[0].value.trim().indexOf(' ') === -1) {
+        matched++;
+      } else {
+        problematic.push(1);
+      }
+
+      // URL is valid, ID: 2
+      try {
+        new URL($('#url')[0].value.trim());
+        matched++;
+      } catch {
+        try {
+          new URL("http://" + $('#url')[0].value.trim());
+          matched++
+        } catch {
+          problematic.push(2);
+        }
+      }
+
+      // At least a category is selected, ID: 3
+      let cats = 0;
+      $('[data-def="cat"]').each(function() {if ($(this)[0].checked) {cats++}});
+      console.log(cats,'-',$('[data-def="cat"]'))
+      if (cats !== 0) {
+        matched++
+      } else {
+        problematic.push(3)
+      }
+
+      // Checkbox is selected, ID: 4
+      if ($('#agree')[0].checked) {
+        matched++
+      } else {
+        problematic.push(4)
+      }
+
+      console.log(problematic, problematic.equals([0,2,3,4]), problematic == [0,2,3,4]);
+
+      function problems() {
+        if (problematic.equals([0,1,2,3,4] ) || problematic.equals([0,1,3,4] ) || problematic.equals([0,2,3,4] ) || problematic.equals([1,2,3,4] ) || problematic.equals([0,3,4] ) || problematic.equals([1,3,4] ) || problematic.equals([2,3,4])) {
+          $('#url').removeClass('is-valid').addClass('is-invalid');
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-valid').addClass('is-invalid')});
+          $('#agree').removeClass('is-valid').addClass('is-invalid');
+        } else if (problematic.equals([0,1,2,3] ) || problematic.equals([0,1,3] ) || problematic.equals([0,2,3] ) || problematic.equals([1,2,3] ) || problematic.equals([0,3] ) || problematic.equals([1,3] ) || problematic.equals([2,3])) {
+          $('#url').removeClass('is-valid').addClass('is-invalid');
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-valid').addClass('is-invalid')});
+          $('#agree').removeClass('is-invalid').addClass('is-valid');
+        } else if (problematic.equals([0,1,2,4] ) || problematic.equals([0,1,4] ) || problematic.equals([0,2,4] ) || problematic.equals([1,2,4] ) || problematic.equals([0,4] ) || problematic.equals([1,4] ) || problematic.equals([2,4])) {
+          $('#url').removeClass('is-valid').addClass('is-invalid');
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-invalid').addClass('is-valid')});
+          $('#agree').removeClass('is-valid').addClass('is-invalid');
+        } else if (problematic.equals([0,1,2] ) || problematic.equals([0,1] ) || problematic.equals([0,2] ) || problematic.equals([1,2] ) || problematic.equals([0] ) || problematic.equals([1] ) || problematic.equals([2])) {
+          $('#url').removeClass('is-valid').addClass('is-invalid');
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-invalid').addClass('is-valid')});
+          $('#check').removeClass('is-invalid').addClass('is-valid');
+        } else if (problematic.equals([3,4])) {
+          $('#url').removeClass('is-invalid').addClass('is-valid')
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-valid').addClass('is-invalid')});
+          $('#agree').removeClass('is-valid').addClass('is-invalid');
+        } else if (problematic.equals([3])) {
+          $('#url').removeClass('is-invalid').addClass('is-valid');
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-valid').addClass('is-invalid')});
+          $('#check').removeClass('is-invalid').addClass('is-valid');
+        } else if (problematic.equals([4])) {
+          $('#url').removeClass('is-invalid').addClass('is-valid');
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-invalid').addClass('is-valid');});
+          $('#agree').removeClass('is-valid').addClass('is-invalid');
+        } else if (problematic.equals([])) {
+          $('#url').removeClass('is-invalid').addClass('is-valid');
+          $('[data-def="cat"]').each(function() {$(this).removeClass('is-invalid').addClass('is-valid');});
+          $('#agree').removeClass('is-invalid').addClass('is-valid');
+          document.forms['submission'].submit();
+        }
+      }
+
+      $('#nome').addClass('is-valid');
+      //$('label.btn').each(function() {$(this).addClass('is-valid')});
+
+      problems();
+    }
+  </script>
+  </body>
+  </html>
