@@ -11,6 +11,14 @@
   .display-4 {
     font-size: 1.5rem;
   }
+  .btn-outline-secondary:hover {
+    background-color: transparent;
+    color: #6c757d;
+  }
+}
+
+.btn-outline-secondary:focus, .btn-outline-secondary.focus {
+  box-shadow: none;
 }
 
 .r::before{
